@@ -146,3 +146,19 @@ function addTestimonialsToContainer(testimonials) {
     const hiddenBtmElements = document.querySelectorAll('.hdnBtm');
     hiddenBtmElements.forEach((el) => observerUp.observe(el));
     
+
+    // Contact Session
+    // Form To Whatsapp
+    function sendToWhatsapp() {
+        let number = "+6281524552620";
+        let name = document.getElementById('nama').value;
+        let email = document.getElementById('email').value;
+        let message = document.getElementById('pesan').value;
+
+        var url = "https://wa.me/" + number + "?text=" 
+        + "Nama : " + name + "%0a" 
+        + "Email : " + email  + "%0a"
+        + "Pertanyaan : " + message;
+        window.open(url, '_blank').focus();
+
+    }
