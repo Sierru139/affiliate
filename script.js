@@ -110,6 +110,7 @@ function addTestimonialsToContainer(testimonials) {
         if (respoMenu.classList.contains('block')) {
             respoMenu.classList.remove('block');
             respoMenu.classList.add('hidden');
+            respoMenu.classList.add('hidden');
         } else {
             respoMenu.classList.add('block');
             respoMenu.classList.remove('hidden');
