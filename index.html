@@ -10,6 +10,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
     <link href="https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,200..1000;1,200..1000&display=swap" rel="stylesheet">
     <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
     <style>
@@ -60,13 +61,38 @@
                 opacity: 1;
             }
         }
+        
+        .hdn {
+            scale: .2;
+            opacity: 0;
+            transform: translateY(40%);
+            transition: all .8s;
+        }
+
+        .show {
+            scale: 1;
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .hdnBtm {
+            opacity: 0;
+            transform: translateY(40%);
+            transition: all .8s;
+        }
+
+        .show {
+            scale: 1;
+            opacity: 1;
+            transform: translateY(0);
+        }
     </style>
 </head>
 
 <body style="background-image: url('./assets/images/bg-home.jpg'); background-repeat: repeat;">
 
-    <header class="navbar top-0 left-0 right-0 absolute flex justify-end items-center lg:py-6 py-3 px-5 shadow-sm border-b border-[#ffffff25] font-semibold z-50">
-        <div class="sm:flex hidden text-white">
+    <header class="navbar top-0 left-0 right-0 absolute flex justify-end text-white items-center lg:py-6 py-3 px-5 shadow-sm border-b border-[#ffffff25] font-semibold z-50">
+        <div class="sm:flex hidden ">
             <a class="mr-6" href="#Home">Home</a>
             <a class="mr-6" href="#Tryout">Tryout</a>
             <a class="mr-6" href="#Bimbel">Bimbel CPNS</a>
@@ -115,7 +141,7 @@
     <!-- SECTION 1 RATING -->
     <!-- SECTION 1 RATING -->
     <section class="max-w-[1320px] mx-auto px-6 py-12 mb-12">
-        <div class="flex flex-col items-center text-center">
+        <div class="flex flex-col items-center text-center hdnBtm">
             <div class="text-yellow-400 text-2xl">
                 <i class="fas fa-star"></i>
                 <i class="fas fa-star"></i>
@@ -127,8 +153,8 @@
                 <h5>(Rating dari <span class="font-bold">12068 Pengguna</span> )</h5>
             </div>
         </div>
-        <div class="flex lg:flex-row flex-col shadow-lg mt-12">
-            <div class="flex items-center flex-1 py-12 bg-blue-400 justify-center">
+        <div class="flex lg:flex-row flex-col mt-12">
+            <div class="flex items-center flex-1 py-12 bg-blue-400 justify-center hdn shadow-md ">
                 <div class="h-20 w-20 flex items-center justify-center bg-blue-100 rounded-sm text-xl">
                     <i class="fas fa-users"></i>
                 </div>
@@ -137,7 +163,7 @@
                     <h3 class="font-bold text-4xl">12095</h3>
                 </div>
             </div>
-            <div class="flex items-center flex-1 py-12 bg-blue-100 justify-center">
+            <div class="flex items-center flex-1 py-12 bg-blue-100 justify-center hdn shadow-md ">
                 <div class="h-20 w-20 flex items-center justify-center bg-blue-400 rounded-sm text-xl">
                     <i class="fas fa-medal"></i>
                 </div>
@@ -146,7 +172,7 @@
                     <h3 class="font-bold text-4xl">4</h3>
                 </div>
             </div>
-            <div class="flex items-center flex-1 py-12 bg-blue-400 justify-center">
+            <div class="flex items-center flex-1 py-12 bg-blue-400 justify-center hdn shadow-md ">
                 <div class="h-20 w-20 flex items-center justify-center bg-blue-100 rounded-sm text-xl">
                     <i class="fas fa-video"></i>
                 </div>
@@ -163,36 +189,36 @@
     <section class="max-w-[1320px] mx-auto px-6 py-12 mb-12">
         <div class="flex lg:flex-row flex-col">
             <div class="flex-[59%]">
-                <h4 class="text-2xl font-bold text-blue-500">TEST ASN</h4>
-                <h2 class="text-4xl font-bold mb-10">Kenapa Harus Belajar di Test ASN?</h2>
-                <p class="mb-6 opacity-85">
+                <h4 class="text-2xl font-bold text-blue-500 hdnBtm">TEST ASN</h4>
+                <h2 class="text-4xl font-bold mb-10 hdnBtm">Kenapa Harus Belajar di Test ASN?</h2>
+                <p class="mb-6 opacity-85 hdnBtm">
                     "TEST ASN, tidak hanya sekadar menyediakan pembelajaran, melainkan menjadi arsitek pengalaman belajar revolusioner bagi para pelajar di era modern. Dengan kombinasi keahlian terdepan dan teknologi canggih, kami memastikan pengalaman belajar terbaik yang tak terlupakan untuk Anda."
                 </p>
                 <div class="flex lg:flex-row flex-col mb-8">
-                    <div class="flex-1">
+                    <div class="flex-1 hdn">
                         <h4 class="text-lg mb-2"><i class="fas fas fa-check mr-4 text-blue-500"></i>Paket Soal Tryout Online</h4>
                         <h4 class="text-lg mb-2"><i class="fas fas fa-check mr-4 text-blue-500"></i>Paket Pembahasan Tryout</h4>
                         <h4 class="text-lg mb-2"><i class="fas fas fa-check mr-4 text-blue-500"></i>Materi Terupdate</h4>
                         <h4 class="text-lg mb-2"><i class="fas fas fa-check mr-4 text-blue-500"></i>Harga Kantong Mahasiswa</h4>
                     </div>
-                    <div class="flex-1">
+                    <div class="flex-1 hdn">
                         <h4 class="text-lg mb-2"><i class="fas fas fa-check mr-4 text-blue-500"></i>Paket Bimbel Online Terpecaya</h4>
                         <h4 class="text-lg mb-2"><i class="fas fas fa-check mr-4 text-blue-500"></i>Mentor Profesional</h4>
                         <h4 class="text-lg mb-2"><i class="fas fas fa-check mr-4 text-blue-500"></i>Pembelajaran Interaktif</h4>
                         <h4 class="text-lg mb-2"><i class="fas fas fa-check mr-4 text-blue-500"></i>Konsultasi Gratis</h4>
                     </div>
                 </div>
-                <div class="flex items-center mb-8 ">
+                <div class="flex items-center mb-8 hdn">
                     <div class="flex items-center justify-center bg-blue-400 h-20 w-20 text-white text-4xl">
                         <i class="fab fa-whatsapp"></i>
                     </div>
                     <div class="pl-4">
                         <h3 class="lg:text-xl text-lg font-semibold mb-2">Konsultasi Melalui Whatsapp</h3>
-                        <h3 class="lg:text-3xl text-xl font-semibold text-blue-400">+6289948123123</h3>
+                        <h3 class="lg:text-3xl text-xl font-semibold text-blue-400">+6285299655699</h3>
                     </div>
                 </div>
                 <div>
-                    <a class="text-hover px-12 py-4 bg-blue-400 text-white" href="https://wa.me/+6285299655699">Tanya Admin</a>
+                    <a class="text-hover px-12 py-4 bg-blue-400 text-white hdn" href="https://wa.me/+6285299655699">Tanya Admin</a>
                 </div>
             </div>
             <div class="flex-[41%]">
@@ -205,11 +231,11 @@
     <!-- SECTION 3 CLASS -->
     <section id="Tryout" class="max-w-[1320px] mx-auto px-4 py-6 mb-12">
         <div class="flex items-center justify-center flex-col text-center">
-            <h4 class="text-2xl font-bold text-blue-500">TRYOUT CPNS TERSEDIA</h4>
-            <h2 class="text-4xl font-bold mb-10">Ikuti Tryout Kami</h2>
+            <h4 class="text-2xl font-bold text-blue-500 hdn">TRYOUT CPNS TERSEDIA</h4>
+            <h2 class="text-4xl font-bold mb-10 hdn">Ikuti Tryout Kami</h2>
         </div>
         <div class="flex flex-wrap">
-            <div class="lg:w-3/12 md:w-2/4 w-full px-2 mt-2 rounded-md">
+            <div class="lg:w-3/12 md:w-2/4 w-full px-2 mt-2 rounded-md hdnBtm">
                 <div class="flex flex-col rounded-md overflow-hidden border bg-white">
                     <div class="h-[200px] relative overflow-hidden">
                         <img class="images object-cover object-center w-full h-full" src="https://testasn.com/filetryout/IMG_20240613_182015_335.png" alt="">
@@ -229,7 +255,7 @@
                     </div>
                 </div>
             </div>
-            <div class="lg:w-3/12 md:w-2/4 w-full px-2 mt-2 rounded-md">
+            <div class="lg:w-3/12 md:w-2/4 w-full px-2 mt-2 rounded-md hdnBtm">
                 <div class="flex flex-col rounded-md overflow-hidden border bg-white">
                     <div class="h-[200px] relative overflow-hidden">
                         <img class="images object-cover object-center w-full h-full" src="https://testasn.com/filetryout/IMG_20240613_182015_335.png" alt="">
@@ -249,7 +275,7 @@
                     </div>
                 </div>
             </div>
-            <div class="lg:w-3/12 md:w-2/4 w-full px-2 mt-2 rounded-md">
+            <div class="lg:w-3/12 md:w-2/4 w-full px-2 mt-2 rounded-md hdnBtm">
                 <div class="flex flex-col rounded-md overflow-hidden border bg-white">
                     <div class="h-[200px] relative overflow-hidden">
                         <img class="images object-cover object-center w-full h-full" src="https://testasn.com/filetryout/IMG_20240613_182015_335.png" alt="">
@@ -269,7 +295,7 @@
                     </div>
                 </div>
             </div>
-            <div class="lg:w-3/12 md:w-2/4 w-full px-2 mt-2 rounded-md">
+            <div class="lg:w-3/12 md:w-2/4 w-full px-2 mt-2 rounded-md hdnBtm">
                 <div class="flex flex-col rounded-md overflow-hidden border bg-white">
                     <div class="h-[200px] relative overflow-hidden">
                         <img class="images object-cover object-center w-full h-full" src="https://testasn.com/filetryout/IMG_20240613_182015_335.png" alt="">
@@ -295,11 +321,11 @@
     <!-- SECTION 4 COACH -->
     <!-- SECTION 4 COACH -->
     <section class="max-w-[1320px] mx-auto py-12 px-4 mb-12">
-        <div class="flex items-center justify-center flex-col text-center">
+        <div class="flex items-center justify-center flex-col text-center hdnBtm">
             <h4 class="text-2xl font-bold text-blue-500">PENGAJAR PROFESIONAL</h4>
             <h2 class="text-4xl font-bold mb-10">Tenaga Profesional Kami Siap Membantu Belajar Anda</h2>
         </div>
-        <div class="swiper3 overflow-hidden relative pb-24">
+        <div class="swiper3 overflow-hidden relative pb-24 hdnBtm">
             <div class="swiper-wrapper h-[26rem]">
                 <div class="swiper-slide grow-0 mt-2" role="group" aria-label="1 / 63" data-swiper-slide-index="0" style="width: 168.667px; margin-right: 10px;">
                     <div class="flex flex-col bg-blue-100 rounded-sm overflow-hidden h-full">
@@ -1003,12 +1029,12 @@
     <!-- SECTION 5 CLASS BIMBLE -->
     <!-- SECTION 5 CLASS BIMBLE -->
     <section id="Bimbel" class="max-w-[1320px] mx-auto px-4 py-12 mb-12">
-        <div class="flex items-center justify-center flex-col text-center">
+        <div class="flex items-center justify-center flex-col text-center hdn">
             <h4 class="text-2xl font-bold text-blue-500">BIMBEL CPNS ONLINE</h4>
             <h2 class="text-4xl font-bold mb-10">Daftarkan Segera Kelas Bimbel CPNS</h2>
         </div>
         <div class="flex">
-            <div class="lg:w-[33%] w-[100%]  shrink  grow-0 px-5">
+            <div class="lg:w-[33%] w-[100%] shrink grow-0 px-5 hdnBtm">
                 <div class=" bg-blue-100 rounded-sm overflow-hidden">
                     <div class="">
                         <img class="max-w-full" src="https://testasn.com/materi/bimbel%20bismillah_2.png" alt="">
@@ -1040,13 +1066,13 @@
     <!-- SECTION 6 TESTIMONIAL -->
     <!-- SECTION 6 TESTIMONIAL -->
     <section id="Testimonial" class="max-w-[1320px] mx-auto px-4 py-12 mb-12">
-        <div class="flex items-center justify-center flex-col text-center">
+        <div class="flex items-center justify-center flex-col text-center hdn">
             <h4 class="text-2xl font-bold text-blue-500">Testimonial</h4>
             <h2 class="text-4xl font-bold mb-10">Apa kata mereka?</h2>
         </div>
-        <div class="swiper2 overflow-hidden relative">
+        <div class="swiper2 overflow-hidden relative hdnBtm">
             <!-- Additional required wrapper -->
-            <div class="swiper-wrapper h-fit pb-10" id="testimonial-container">
+            <div class="swiper-wrapper h-fit pb-10" id="testimonial-container ">
                 <div class="swiper-slide bg-blue-300 p-5" role="group" aria-label="1 / 13" data-swiper-slide-index="0" style="width: 266px; margin-right: 10px;">
                     <div class="flex items-center border-b pb-4 mb-4">
                         <div class="flex items-center relative justify-center bg-blue-400 h-20 w-20 text-white text-4xl rounded-full overflow-hidden">
@@ -1250,14 +1276,24 @@
 
     <!-- SECTION 7 CONTACT -->
     <section class="max-w-[1320px] mx-auto px-4 py-12 mb-12">
-        <div class="flex lg:flex-row flex-col ">
+        <div class="flex lg:flex-row flex-col items-center">
             <div class="flex-[59%] pr-4">
-                <h4 class="mb-4 text-2xl font-bold">AJUKAN PERTANYAAN</h4>
-                <h2 class="mb-12 text-4xl font-bold">Ada pertanyaan? Silahkan ajukan pertanyaan ke kami.</h2>
-
+                <h4 class="mb-4 text-2xl font-bold hdnBtm">AJUKAN PERTANYAAN</h4>
+                <h2 class="mb-12 text-4xl font-bold hdnBtm">Ada pertanyaan? Silahkan ajukan pertanyaan ke kami.</h2>
+                <h4 class="text-xl font-bold mb-4 hdnBtm">Layanan 24 Jam</h4>
+                <p class="mb-4 hdnBtm">Butuh bantuan atau informasi lebih lanjut? Kami siap membantu! Jangan ragu untuk mengajukan pertanyaan Anda. Tim kami tersedia 24 jam untuk memberikan layanan terbaik. Kami mengutamakan kenyamanan Anda. Silakan hubungi kami melalui layanan WhatsApp atau gunakan formulir di bawah ini. Terima kasih!</p>
+                <div class="flex items-center mb-8 hdnBtm">
+                    <div class="flex items-center justify-center bg-blue-400 h-20 w-20 text-white text-4xl">
+                        <i class="fab fa-whatsapp"></i>
+                    </div>
+                    <div class="pl-4">
+                        <h3 class="lg:text-xl text-lg font-semibold mb-2">Konsultasi Melalui Whatsapp</h3>
+                        <h3 class="lg:text-3xl text-xl font-semibold text-blue-400">+6285299655699</h3>
+                    </div>
+                </div>
             </div>
             <div class="flex-[41%]">
-                <form class="bg-blue-400 py-12 px-8" action="POST">
+                <form class="bg-blue-400 py-12 px-8 hdn" action="POST">
                     <input class="block w-full mb-2 py-3 px-3" name="nama" placeholder="Nama Anda" type="text">
                     <input class="block w-full mb-2 py-3 px-3" name="email" placeholder="Alamat Email Anda" type="text">
                     <textarea class="block w-full mb-2 py-3 px-2" name="pesan" id="" rows="3" placeholder="Pesan"></textarea>

@@ -86,9 +86,9 @@ function addTestimonialsToContainer(testimonials) {
     window.addEventListener("scroll", () => {
         if (window.scrollY > 100) {
             navbar.classList.remove("absolute", "text-white");
-            navbar.classList.add("goDown", "bg-white", "text-black", "fixed");
+            navbar.classList.add("goDown", "bg-white", "fixed");
         } else {
-            navbar.classList.remove("fixed", "text-black", "bg-white", "goDown");
+            navbar.classList.remove("fixed", "bg-white", "goDown");
             navbar.classList.add("absolute", "text-white");
         }
     })
@@ -115,3 +115,33 @@ function addTestimonialsToContainer(testimonials) {
             respoMenu.classList.remove('hidden');
         }
     })
+
+    // INTERSECT
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach((entry, index) => {
+            if(entry.isIntersecting){
+                setTimeout(() => {
+                    entry.target.classList.add('show');
+                    observer.unobserve(entry.target);
+                }, index * 200);
+            }
+        });
+    });
+    
+    const hiddenElements = document.querySelectorAll('.hdn');
+    hiddenElements.forEach((el) => observer.observe(el));
+    
+    const observerUp = new IntersectionObserver((entries) => {
+        entries.forEach((entry, index) => {
+            if(entry.isIntersecting){
+                setTimeout(() => {
+                    entry.target.classList.add('show');
+                    observerUp.unobserve(entry.target);
+                }, index * 200);
+            }
+        });
+    });
+        
+    const hiddenBtmElements = document.querySelectorAll('.hdnBtm');
+    hiddenBtmElements.forEach((el) => observerUp.observe(el));
+    
