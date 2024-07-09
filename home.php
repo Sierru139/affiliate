@@ -469,13 +469,13 @@ $testimonial = json_decode($testimonialData, true);
             }
         },
         // Navigation arrows
-        navigation: {
-            nextEl: '.swiper-button-next',
-            prevEl: '.swiper-button-prev',
-        },
+        // navigation: {
+        //     nextEl: '.swiper-button-next',
+        //     prevEl: '.swiper-button-prev',
+        // },
 
         pagination: {
-            el: '.swiper-pagination',
+            el: '.swiper2 .swiper-pagination',
             // dynamicBullets: true,
             clickable: true,
         },
