@@ -80,7 +80,7 @@ function addTestimonialsToContainer(testimonials) {
             delay: 4000,
         },
     })
-
+    
     const navbar = document.querySelector(".navbar");
 
     window.addEventListener("scroll", () => {
