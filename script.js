@@ -89,7 +89,7 @@ function addTestimonialsToContainer(testimonials) {
             navbar.classList.add("goDown", "bg-white", "fixed");
         } else {
             navbar.classList.remove("fixed", "bg-white", "goDown");
-            navbar.classList.add("absolute", "text-white");
+            navbar.classList.add("absolute");
         }
     })
 
