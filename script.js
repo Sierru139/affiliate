@@ -150,7 +150,7 @@ function addTestimonialsToContainer(testimonials) {
     // Contact Session
     // Form To Whatsapp
     function sendToWhatsapp() {
-        let number = "+6281524552620";
+        let number = "+6285299655699";
         let name = document.getElementById('nama').value;
         let email = document.getElementById('email').value;
         let message = document.getElementById('pesan').value;
