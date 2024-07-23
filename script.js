@@ -85,11 +85,11 @@ function addTestimonialsToContainer(testimonials) {
 
     window.addEventListener("scroll", () => {
         if (window.scrollY > 100) {
-            navbar.classList.remove("absolute", "text-white");
-            navbar.classList.add("goDown", "bg-white", "fixed");
+            navbar.classList.remove("absolute", "text-white", "opacity-0");
+            navbar.classList.add("goDown", "bg-white", "fixed", "shadow-sm");
         } else {
-            navbar.classList.remove("fixed", "bg-white", "goDown");
-            navbar.classList.add("absolute");
+            navbar.classList.remove("fixed", "bg-white", "goDown", "shadow-sm");
+            navbar.classList.add("absolute", "text-white", "opacity-0");
         }
     })
 
@@ -145,6 +145,20 @@ function addTestimonialsToContainer(testimonials) {
         
     const hiddenBtmElements = document.querySelectorAll('.hdnBtm');
     hiddenBtmElements.forEach((el) => observerUp.observe(el));
+
+    const observerDown = new IntersectionObserver((entries) => {
+        entries.forEach((entry, index) => {
+            if(entry.isIntersecting){
+                setTimeout(() => {
+                    entry.target.classList.add('show');
+                    observerDown.unobserve(entry.target);
+                }, index * 200);
+            }
+        });
+    });
+        
+    const hiddenTopElements = document.querySelectorAll('.hdnTop');
+    hiddenTopElements.forEach((el) => observerDown.observe(el));
     
 
     // Contact Session
