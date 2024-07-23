@@ -176,3 +176,31 @@ function addTestimonialsToContainer(testimonials) {
         window.open(url, '_blank').focus();
 
     }
+
+
+// Quotes
+document.addEventListener("DOMContentLoaded", function() {
+    const textElements = document.querySelectorAll('.quotes');
+
+    const observer = new IntersectionObserver((entries, observer) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                const textElement = entry.target;
+                const text = textElement.textContent;
+                textElement.innerHTML = '';
+                for (let i = 0; i < text.length; i++) {
+                    const span = document.createElement('span');
+                    span.textContent = text[i] === ' ' ? '\u00A0' : text[i];  // Use non-breaking space for spaces
+                    span.style.animationDelay = `${i * 0.05}s`;
+                    textElement.appendChild(span);
+                }
+                observer.unobserve(textElement); // Stop observing after animation starts
+            }
+        });
+    }, { threshold: 0.1 }); // Trigger when 10% of the element is visible
+
+    textElements.forEach(textElement => {
+        observer.observe(textElement);
+    });
+});
+

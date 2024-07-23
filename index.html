@@ -86,6 +86,22 @@
             opacity: 1;
             transform: translateY(0);
         }
+
+        .quotes span {
+            display: inline-block;
+            opacity: 0;
+            transform: translateY(20px);
+            animation: fadeInUp 100ms forwards;
+        }
+
+        @keyframes fadeInUp {
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+
     </style>
 </head>
 
@@ -120,7 +136,7 @@
     <!-- LANDING PAGE ====== -->
 
     <section class="h-fit relative">
-        <div class="bg-blue-500 py-12 w-full relative justify-center flex hdnTop">
+        <div class="bg-blue-400 py-12 w-full relative justify-center flex hdnTop">
             <div class="text-center max-w-[1000px] mx-auto px-4 z-10">
                 <h1 class="md:text-5xl text-3xl font-bold text-white">Siap-siap! kamu menjadi ASN Tahun ini</h1>
             </div>
@@ -128,13 +144,13 @@
         <div class="flex justify-center max-w-[475px] mx-auto hdnBtm">
             <img src="./assets/images/page-1/home-img1.png" class="" alt="">
         </div>
-        <div class="bg-blue-300 py-8 relative justify-center flex px-4 hdnBtm">
-            <h1 class="md:text-3xl text-xl font-bold text-white">Inikah kamu saat ini..</h1>
+        <div class="bg-blue-400 py-8 relative justify-center flex px-4 hdnBtm">
+            <h1 class="md:text-4xl text-3xl font-bold text-white">Inikah kamu saat ini..</h1>
         </div>
         <div class="max-w-[1320px] mx-auto">
-            <div class="flex lg:flex-row flex-col items-center px-4">
-                <div class="flex-[50%] py-12">
-                    <div class="text-lg">
+            <div class="flex lg:flex-row flex-col px-4">
+                <div class="flex-[50%]">
+                    <div class="text-lg py-12">
                         <h4 class="mb-2 flex hdnBtm"><i class="fas fas fa-check mr-3 text-blue-500"></i><span><b>Masih sangat minim persiapan?</b> Ikut Try out masih saja belum lolos. bagaimana nanti tes aslinya? </span></h4>
                         <h4 class="mb-2 flex hdnBtm"><i class="fas fas fa-check mr-3 text-blue-500"></i><span><b>Sangat khawatir tentang soal tes yang sulit?</b> Betapa menakutkannya soal-soal sulit kategori HOTS yang butuh penalaran dan pemikiran yang amat mendalam.</span></h4>
                         <h4 class="mb-2 flex hdnBtm"><i class="fas fas fa-check mr-3 text-blue-500"></i><span><b>Takut gagal?</b> Rasa takut itu bisa menghantui setiap malam. Kami juga pernah berada di posisi itu.</span></h4>
@@ -143,17 +159,17 @@
                     </div>
                 </div>
                 <div class="flex-[50%] flex justify-center">
-                    <img class="hdn" src="./assets/images/page-1/home-img2.png" alt="">
+                    <img class="hdn" src="./assets/images/page-1/home-img3.png" alt="">
                 </div>
             </div>
         </div>
         <div class="bg-blue-400 py-8 relative justify-center flex px-4 hdnBtm">
-            <h1 class="md:text-3xl text-xl font-bold text-white">Namun..</h1>
+            <h1 class="md:text-4xl text-3xl font-bold text-white">Namun..</h1>
         </div>
         <div class="max-w-[1320px] mx-auto">
             <div class="flex lg:flex-row flex-col items-center px-4 py-12">
                 <div class="flex-[50%] flex justify-center">
-                    <img class="hdn" src="./assets/images/page-1/home-img3.png" alt="">
+                    <img class="hdn" src="./assets/images/page-1/home-img2.png" alt="">
                 </div>
                 <div class="flex-[50%] py-12">
                     <div class="text-lg">
@@ -167,9 +183,9 @@
             </div>
         </div>
         <div class="max-w-[1320px] mx-auto text-center py-12 bg-[#b8b8b818] backdrop-blur-xl rounded-xl shadow-md px-6 hdnTop">
-            <h3 class="md:text-2xl text-lg max-w-[650px] mx-auto opacity-75 hdnBtm">"Jangan biarkan ketakutan dan kekhawatiran menghalangi impian Kamu. Kami di sini untuk membantu Kamu berhasil!"</h3>
-            <h1 class="md:text-4xl text-2xl font-bold my-12 opacity-70 hdnBtm">Kamu tidak sendiri.</h1>
-            <h3 class="md:text-base text-sm max-w-[650px]  mx-auto opacity-70 hdnBtm">"Kami menawarkan bimbingan intensif dan strategi khusus untuk membantu Anda mempersiapkan diri menghadapi tes CPNS dan PPPK dengan percaya diri."</h3>
+            <h3 class="md:text-2xl text-lg max-w-[650px] mx-auto opacity-75 hdnBtm quotes italic">"Jangan biarkan ketakutan dan kekhawatiran menghalangi impian Kamu. Kami di sini untuk membantu Kamu berhasil!"</h3>
+            <h1 class="md:text-5xl text-2xl font-bold my-12 opacity-70 hdnBtm quotes">Kamu tidak sendiri.</h1>
+            <h3 class="md:text-2xl text-lg max-w-[650px]  mx-auto opacity-70 hdnBtm quotes ">"Kami menawarkan bimbingan intensif dan strategi khusus untuk membantu Anda mempersiapkan diri menghadapi tes CPNS dan PPPK dengan percaya diri."</h3>
         </div>
     </section>
 
