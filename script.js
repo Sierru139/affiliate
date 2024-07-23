@@ -191,7 +191,7 @@ document.addEventListener("DOMContentLoaded", function() {
                 for (let i = 0; i < text.length; i++) {
                     const span = document.createElement('span');
                     span.textContent = text[i] === ' ' ? '\u00A0' : text[i];  // Use non-breaking space for spaces
-                    span.style.animationDelay = `${i * 0.05}s`;
+                    span.style.animationDelay = `${i * 0.035}s`;
                     textElement.appendChild(span);
                 }
                 observer.unobserve(textElement); // Stop observing after animation starts
