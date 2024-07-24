@@ -93,30 +93,30 @@ function addTestimonialsToContainer(testimonials) {
         }
     })
 
-    const respoNav = document.getElementById('resNav');
-    const respoMenu = document.getElementById('resMenu');
-    respoNav.addEventListener('click', function() {
-        if (respoMenu.classList.contains('hidden')) {
-            respoMenu.classList.remove('hidden');
-            respoMenu.classList.add('block');
-        } else {
-            respoMenu.classList.add('hidden');
-            respoMenu.classList.remove('block');
-        }
+    document.addEventListener("DOMContentLoaded", function() {
+        const respoNav = document.getElementById('resNav');
+        const respoMenu = document.getElementById('resMenu');
+        const respoNavClose = document.getElementById('resNavClose');
+    
+        respoNav.addEventListener('click', function() {
+            if (respoMenu.classList.contains('hidden')) {
+                respoMenu.classList.remove('hidden');
+                respoMenu.classList.add('block');
+            } else {
+                respoMenu.classList.add('hidden');
+                respoMenu.classList.remove('block');
+            }
+        });
+    
+        respoNavClose.addEventListener('click', function() {
+            respoMenu.classList.add('nav-close');
+            setTimeout(() => {
+                respoMenu.classList.add('hidden');
+                respoMenu.classList.remove('block', 'nav-close');
+            }, 700);
+        });
     });
-
-    const respoNavClose = document.getElementById('resNavClose')
-    respoNavClose.addEventListener('click', function() {
-        if (respoMenu.classList.contains('block')) {
-            respoMenu.classList.remove('block');
-            respoMenu.classList.add('hidden');
-            respoMenu.classList.add('hidden');
-        } else {
-            respoMenu.classList.add('block');
-            respoMenu.classList.remove('hidden');
-        }
-    })
-
+    
     // INTERSECT
     const observer = new IntersectionObserver((entries) => {
         entries.forEach((entry, index) => {
@@ -178,29 +178,29 @@ function addTestimonialsToContainer(testimonials) {
     }
 
 
-// Quotes
-document.addEventListener("DOMContentLoaded", function() {
-    const textElements = document.querySelectorAll('.quotes');
+// // Quotes
+// document.addEventListener("DOMContentLoaded", function() {
+//     const textElements = document.querySelectorAll('.quotes');
 
-    const observer = new IntersectionObserver((entries, observer) => {
-        entries.forEach(entry => {
-            if (entry.isIntersecting) {
-                const textElement = entry.target;
-                const text = textElement.textContent;
-                textElement.innerHTML = '';
-                for (let i = 0; i < text.length; i++) {
-                    const span = document.createElement('span');
-                    span.textContent = text[i] === ' ' ? '\u00A0' : text[i];  // Use non-breaking space for spaces
-                    span.style.animationDelay = `${i * 0.035}s`;
-                    textElement.appendChild(span);
-                }
-                observer.unobserve(textElement); // Stop observing after animation starts
-            }
-        });
-    }, { threshold: 0.1 }); // Trigger when 10% of the element is visible
+//     const observer = new IntersectionObserver((entries, observer) => {
+//         entries.forEach(entry => {
+//             if (entry.isIntersecting) {
+//                 const textElement = entry.target;
+//                 const text = textElement.textContent;
+//                 textElement.innerHTML = '';
+//                 for (let i = 0; i < text.length; i++) {
+//                     const span = document.createElement('span');
+//                     span.textContent = text[i] === ' ' ? '\u00A0' : text[i];  // Use non-breaking space for spaces
+//                     span.style.animationDelay = `${i * 0.035}s`;
+//                     textElement.appendChild(span);
+//                 }
+//                 observer.unobserve(textElement); // Stop observing after animation starts
+//             }
+//         });
+//     }, { threshold: 0.1 }); // Trigger when 10% of the element is visible
 
-    textElements.forEach(textElement => {
-        observer.observe(textElement);
-    });
-});
+//     textElements.forEach(textElement => {
+//         observer.observe(textElement);
+//     });
+// });
 
