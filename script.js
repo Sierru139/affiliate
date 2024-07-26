@@ -170,7 +170,7 @@ function addTestimonialsToContainer(testimonials) {
         let message = document.getElementById('pesan').value;
 
         var url = "https://wa.me/" + number + "?text="
-        + "Salam%20kak%20saya%20ingin%20mengajukan%20beberapa%20pertanyaan%20mengenai%20Bintaro%20Learning%20Center%0A"
+        + "Salam%20kak%20saya%20ingin%20mengajukan%20pertanyaan%20mengenai%20Bintaro%20Learning%20Center%0A"
         + "Nama : " + name + "%0a" 
         + "Email : " + email  + "%0a"
         + "Pertanyaan : " + message;
