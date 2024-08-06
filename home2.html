@@ -1,0 +1,404 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <title>BLC Kreasi Nektar</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Readex+Pro:wght@160..700&display=swap" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+    <style>
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: "Readex Pro", sans-serif;
+        }
+
+        .goDown {
+            animation: navDown .5s ease;
+        }
+
+        @keyframes navDown {
+            0% {
+                transform: translateY(-100%);
+                opacity: 0;
+            }
+
+            100% {
+                transform: translateY(0);
+                opacity: 1;
+            }
+        }
+
+        .resGoDown {
+            animation: navRespoDown .3s linear;
+        }
+
+        @keyframes navRespoDown {
+            0% {
+                transform: translateX(100%);
+                opacity: 0;
+            }
+
+            100% {
+                transform: translateX(0);
+                opacity: 1;
+            }
+        }
+        
+        .hdn {
+            scale: .2;
+            opacity: 0;
+            transform: translateY(40%);
+            transition: all .8s;
+        }
+
+        .hdnBtm {
+            opacity: 0;
+            transform: translateY(40%);
+            transition: all .8s;
+        }
+
+        .hdnTop {
+            opacity: 0;
+            transform: translateY(-40%);
+            transition: all .7s;
+        }
+
+        .show {
+            scale: 1;
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .quotes span {
+            display: inline-block;
+            opacity: 0;
+            transform: translateY(-10px);
+            animation: fadeInUp .5s forwards;
+        }
+
+        @keyframes fadeInUp {
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .nav-close {
+            animation: nav-close .7s ease;
+        }
+
+        @keyframes nav-close {
+            0% {
+                transform: translateX(0);
+                opacity: 1;
+            }
+            100% {
+                transform: translateX(100%);
+                opacity: 0;
+            }
+        }
+
+        .answer {
+            max-height: 0;
+            overflow: hidden;
+            transition: .6s;
+        }
+        .show {
+            max-height: 200px;
+        }
+
+        .arrow-rotate {
+            rotate: -90deg;
+            transition: rotate .4s;
+        }
+
+        .arrow-rotated {
+            rotate: 0deg;
+        }
+
+        .paket-list {
+            list-style-image: url('./assets/images/green-check.png');
+        }
+
+        /* COLOR 00a4e8 */
+        /* COLOR 015998 */
+    </style>
+</head>
+
+<body>
+
+    <header class="navbar top-0 left-0 right-0 absolute flex justify-end items-center lg:py-6 py-3 px-5 border-[#ffffff25] text-white font-semibold z-50 opacity-0 duration-100">
+        <div class="sm:flex hidden">
+            <a class="mr-6" href="#Home">Home</a>
+            <a class="mr-6" href="#Tryout">Tryout</a>
+            <a class="mr-6" href="#Bimbel">Bimbel CPNS</a>
+            <a class="mr-6" href="#Testimonial">Testimonial</a>
+        </div>
+        <div class="sm:hidden block">
+            <div id="resNav" class="border rounded-md px-2 ">
+                <i class="resBtn fas fa-bars"></i>
+            </div>
+            <div id="resMenu" class="fixed top-0 bottom-0 right-0 py-6 px-12 bg-white text-black hidden resGoDown z-50">
+                <div id="resNavClose" class="inline absolute rounded-md right-5">
+                    <i class="fas fa-x"></i>
+                </div>
+                <div class="block"></div>
+                <div class="mt-8">
+                    <a class="mr-6 block border-b py-3"  href="#Home">Home</a>
+                    <a class="mr-6 block border-b py-3"  href="#Tryout">Tryout</a>
+                    <a class="mr-6 block border-b py-3"  href="#Bimbel">Bimbel CPNS</a>
+                    <a class="mr-6 block border-b py-3"  href="#Testimonial">Testimonial</a>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <section class="bg-red-50 flex items-center justify-center" style="background: radial-gradient(circle, rgba(0,142,219,1) 25%, rgba(9,104,208,1) 100%);">
+        <div class="max-w-[1000px] w-full mx-auto py-12 px-6 flex lg:flex-row flex-col">
+            <div class="flex-1 p-4 lg:text-start text-center">
+                <div class="bg-[#d6edf9] shadow-md shadow-white py-2 rounded-xl lg:mr-[160px] hdn">
+                    <h2 class="text-center">Bintaro Learning Center</h2>
+                </div>
+                <div class="text-white">
+                    <h1 class="mt-8 font-bold text-[40px] hdn">Perjalanan karirmu Dimulai Dari Sini!</h1>
+                    <p class="mt-5 text-lg hdn">Bimbingan Belajar Khusus Seleksi CPNS & CPPPK Terbaik dan Terlengkap di Indonesia!</p>
+                    <div class="flex lg:justify-start justify-center mt-5 gap-x-2">
+                        <a target="_blank" class="text-hover md:px-12 px-6 md:py-3 py-2 bg-blue-400 rounded-lg shadow-xl text-white hdn" href="https://wa.link/mbrub4">Tanya Admin</a>
+                        <a target="_blank" class="text-hover md:px-12 px-6 md:py-3 py-2 bg-[#30bf81] rounded-lg shadow-xl text-white hdn" href="https://wa.link/mbrub4">Tanya Admin</a>
+                    </div>
+                    <p class="mt-5 hdn">Bimbel Yang Sudah Terbukti Membantu 50.000+ Alumni</p>
+                </div>
+            </div>
+            <div class="flex-1 flex items-center justify-center">
+                    <img class="w-[80%]" src="./assets/images/page-1/first-model.png" alt="">
+            </div>
+        </div>
+    </section>
+
+    <!-- ALASAN -->
+    
+    <section>
+        <div class="max-w-[1000px] mx-auto lg:p-8 p-4">
+            <div class="flex hdnBtm">
+                <div class="lg:text-start text-center lg:flex-[0_0_50%] flex-[0_0_100%]">
+                    <h1 class="text-4xl font-bold">Alasan Kenapa Kamu Harus Ikut Bimbel</h1>
+                    <p class="mt-2">Persiapkan dirimu mulai sekarang</p>
+                </div>
+            </div>
+
+            <!-- Alasans -->
+            <div class="mt-8">
+                <div class="">
+                    <div class="ask w-full bg-gray-50 mt-4 shadow-md hdn">
+                        <div class="p-4 cursor-pointer flex justify-between relative">
+                            <h4 class="md:text-base text-sm">1. Persaingan Ketat</h4>
+                            <span class="arrow-rotate elementor-toggle-icon elementor-toggle-icon-right float-right text-right text-black md:w-4 w-2 absolute right-4" aria-hidden="true"><span class="elementor-toggle-icon-closed"><svg class="e-font-icon-svg e-fas-angle-down" viewBox="0 0 320 512" xmlns="http://www.w3.org/2000/svg"><path d="M143 352.3L7 216.3c-9.4-9.4-9.4-24.6 0-33.9l22.6-22.6c9.4-9.4 24.6-9.4 33.9 0l96.4 96.4 96.4-96.4c9.4-9.4 24.6-9.4 33.9 0l22.6 22.6c9.4 9.4 9.4 24.6 0 33.9l-136 136c-9.2 9.4-24.4 9.4-33.8 0z"></path></svg></span></span>
+                        </div>
+                        <div class="answer w-full bg-gray-100">
+                            <ul class="list-disc py-4 md:px-12 px-6">
+                                <li class="md:text-base text-sm">
+                                    Persaingan sangat ketat maka kamu harus bersaing dengan ribuan peserta lainnya yang ingin menjadi ASN, jadi harus memaksimalkan potensi yang ada
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="ask w-full bg-gray-50 mt-4 shadow-md hdn">
+                        <div class="p-4 cursor-pointer flex justify-between relative">
+                            <h4 class="md:text-base text-sm">2. Persiapan kurang matang</h4>
+                            <span class="arrow-rotate elementor-toggle-icon elementor-toggle-icon-right float-right text-right text-black md:w-4 w-2 absolute right-4" aria-hidden="true"><span class="elementor-toggle-icon-closed"><svg class="e-font-icon-svg e-fas-angle-down" viewBox="0 0 320 512" xmlns="http://www.w3.org/2000/svg"><path d="M143 352.3L7 216.3c-9.4-9.4-9.4-24.6 0-33.9l22.6-22.6c9.4-9.4 24.6-9.4 33.9 0l96.4 96.4 96.4-96.4c9.4-9.4 24.6-9.4 33.9 0l22.6 22.6c9.4 9.4 9.4 24.6 0 33.9l-136 136c-9.2 9.4-24.4 9.4-33.8 0z"></path></svg></span></span>
+                        </div>
+                        <div class="answer w-full bg-gray-100">
+                            <ul class="list-disc py-4 md:px-12 px-6">
+                                <li class="md:text-base text-sm">
+                                    Untuk menghadapi tes dan menggapai impian anda menjadi ASN, dibutuhkan persiapan mulai dari sekarang, dari persiapan mental hingga persiapan penguasaan materi, dan juga berlatih soal soal
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="ask w-full bg-gray-50 mt-4 shadow-md hdn">
+                        <div class="p-4 cursor-pointer flex justify-between relative">
+                            <h4 class="md:text-base text-sm">3. Kurang informasi soal & materi</h4>
+                            <span class="arrow-rotate elementor-toggle-icon elementor-toggle-icon-right float-right text-right text-black md:w-4 w-2 absolute right-4" aria-hidden="true"><span class="elementor-toggle-icon-closed"><svg class="e-font-icon-svg e-fas-angle-down" viewBox="0 0 320 512" xmlns="http://www.w3.org/2000/svg"><path d="M143 352.3L7 216.3c-9.4-9.4-9.4-24.6 0-33.9l22.6-22.6c9.4-9.4 24.6-9.4 33.9 0l96.4 96.4 96.4-96.4c9.4-9.4 24.6-9.4 33.9 0l22.6 22.6c9.4 9.4 9.4 24.6 0 33.9l-136 136c-9.2 9.4-24.4 9.4-33.8 0z"></path></svg></span></span>
+                        </div>
+                        <div class="answer w-full bg-gray-100">
+                            <ul class="list-disc py-4 md:px-12 px-6">
+                                <li class="md:text-base text-sm">
+                                    Tentunya kamu harus mengetahui setiap materi-materi yang akan diujikan, karena dalam tes ASN materi yang akan diujikan cukup rumit dan memerlukan persiapan untuk menguasai materi.
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="flex mt-8 hdnBtm">
+                <div class="">
+                    <h4 class="md:text-lg text-base font-semibold text-red-500">TAPI TENANG !!</h4>
+                    <p class="md:text-base text-sm">
+                        <b>Bintaro Learning Center</b> Punya Solusinya Untuk Lulus. Kami adalah pusat Bimbel Persiapan Tes Seleksi CPNS/PPPK terbesar dan terbaik di Indonesia & sudah membantu 50.000+ anggota ASN untuk lulus.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- PAKET -->
+
+    <section>
+        <div class="max-w-[1000px] w-full mx-auto py-12 px-6">
+            <div class="flex hdnBtm">
+                <div class="lg:text-start text-center lg:mr-[50%] mr-0">
+                    <h4 class="text-xl font-bold text-[#002dc2]">- Paket Bimbingan</h4>
+                    <h1 class="text-2xl font-bold mt-4">Beli paket belajarmu untuk persiapan tes CPNS 2024</h1>
+                    <p class="text-lg mt-4">Pilih paket bimbingan sesuai kebutuhanmu.</p>
+                </div>
+            </div>
+            <div class="mt-6">
+                <div class="flex lg:gap-x-4 gap-x-2 sticky lg:top-[4.75rem] top-14 z-50">
+                    <div class="bg-gray-200 rounded-2xl text-center py-3 flex-1">
+                        <h5>CPNS</h5>
+                    </div>
+                    <div class="bg-gray-200 rounded-2xl text-center py-3 flex-1">
+                        <h5>CPPPK</h5>
+                    </div>
+                    <div class="bg-gray-200 rounded-2xl text-center py-3 flex-1">
+                        <h5>Buku</h5>
+                    </div>
+                </div>
+                <div class="flex lg:flex-row flex-col gap-x-6 mt-4">
+                    <div class="bg-gray-50 h-fit shadow-lg rounded-lg border-2 border-black overflow-hidden flex-1 mb-2">
+                        <div class="py-5 bg-[#24b5c5] text-white font-bold text-center">
+                            <h5>REGULER</h5>
+                        </div>
+                        <div>
+                            <div class="p-5">
+                                <h5 class="font-semibold text-lg mb-2">Latihan Mandiri</h5>
+                                <ul class="list-disc ml-4 mt-2 mb-4">
+                                    <li class="paket-list border-b border-black mb-1"><span class="relative -right-1 -top-1">Latihan Soal dan Pembahasan SKD Update 2024. <b class="font-semibold">5.500 Soal</b></span></li>
+                                    <li class="paket-list border-b border-black mb-1"><span class="relative -right-1 -top-1">analisis statistik kemampuan tes dan perangkingan nasional</span></li>
+                                </ul>
+                                <h5 class="font-semibold text-lg mb-2">Video Belajar mandiri</h5>
+                                <ul class="list-disc ml-4 mt-2 mb-4">
+                                    <li class="paket-list border-b border-black mb-1"><span class="relative -right-1 -top-1">Latihan Soal dan Pembahasan SKD Update 2024. <b class="font-semibold">5.500 Soal</b></span></li>
+                                    <li class="paket-list border-b border-black mb-1"><span class="relative -right-1 -top-1">analisis statistik kemampuan tes dan perangkingan nasional</span></li>
+                                </ul>
+                                <h5 class="font-semibold text-lg mb-2">E-Mentoring</h5>
+                                <ul class="list-disc ml-4 mt-2 mb-4">
+                                    <li class="paket-list border-b border-black mb-1"><span class="relative -right-1 -top-1">Grup diskusi CASN 2024</span></li>
+                                    <li class="paket-list border-b border-black mb-1"><span class="relative -right-1 -top-1">Grup Belajar CASN 2024</span></li>
+                                </ul>
+                            </div>
+                            <div class="p-4">
+                                <div></div>
+                                <h5 class="text-sm mb-2"><span class="text-red-600 bg-red-200 p-1">50%</span><s class="opacity-50 ml-2">Rp. 769.000</s></h5>
+                                <h3 class="font-bold text-2xl mb-6">Rp 399.000</h3>
+                                <a href="#" class="block text-center bg-[#2dbabc] py-2 rounded-md shadow-lg text-white mb-2">BELI PAKET</a>
+                                <h3 class="font-bold text-2xl mb-6 text-center">Gunakan Kode Kupon "Solawatkidulu"</h3>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="bg-gray-50 h-fit shadow-lg rounded-lg border-2 border-black overflow-hidden flex-1 mb-2">
+                        <div class="py-5 bg-[#f05651] text-white font-bold text-center">
+                            <h5>GOLD</h5>
+                        </div>
+                        <div>
+                            <div class="p-5">
+                                <h5 class="font-semibold text-lg mb-2">Latihan Mandiri</h5>
+                                <ul class="list-disc ml-4 mt-2 mb-4">
+                                    <li class="paket-list border-b border-black mb-1"><span class="relative -right-1 -top-1">Latihan Soal dan Pembahasan SKD Update 2024. <b class="font-semibold">5.500 Soal</b></span></li>
+                                    <li class="paket-list border-b border-black mb-1"><span class="relative -right-1 -top-1">analisis statistik kemampuan tes dan perangkingan nasional</span></li>
+                                    <li class="paket-list border-b border-black mb-1"><span class="relative -right-1 -top-1">Try Out CAT asesment : <b class="font-semibold">4 kali belajar</b></span></li>
+                                </ul>
+                                <h5 class="font-semibold text-lg mb-2">Video Belajar mandiri</h5>
+                                <ul class="list-disc ml-4 mt-2 mb-4">
+                                    <li class="paket-list border-b border-black mb-1"><span class="relative -right-1 -top-1">1.100 video pembelajaran SKD update 2024. <b class="font-semibold">TIU, TWK, TKP</b></span></li>
+                                    <li class="paket-list border-b border-black mb-1"><span class="relative -right-1 -top-1">perpustakaan Digital : <b class="font-semibold">Koleksi E-book dan kanal rekap materi</b></span></li>
+                                </ul>
+                                <h5 class="font-semibold text-lg mb-2">E-Mentoring</h5>
+                                <ul class="list-disc ml-4 mt-2 mb-4">
+                                    <li class="paket-list border-b border-black mb-1"><span class="relative -right-1 -top-1">Grup diskusi CASN 2024</span></li>
+                                    <li class="paket-list border-b border-black mb-1"><span class="relative -right-1 -top-1">Grup Belajar CASN 2024</span></li>
+                                    <li class="paket-list border-b border-black mb-1"><span class="relative -right-1 -top-1">live streaming belajar langsung dari mentor secara online via youtube</span></li>
+                                </ul>
+                            </div>
+                            <div class="p-4">
+                                <div></div>
+                                <h5 class="text-sm mb-2"><span class="text-red-600 bg-red-200 p-1">50%</span><s class="opacity-50 ml-2">Rp. 769.000</s></h5>
+                                <h3 class="font-bold text-2xl mb-6">Rp 399.000</h3>
+                                <a href="#" class="block text-center bg-[#2dbabc] py-2 rounded-md shadow-lg text-white mb-2">BELI PAKET</a>
+                                <h3 class="font-bold text-2xl mb-6 text-center">Gunakan Kode Kupon "Solawatkidulu"</h3>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="bg-gray-50 h-fit shadow-lg rounded-lg border-2 border-black overflow-hidden flex-1 mb-2">
+                        <div class="py-5 bg-[#3862d1] text-white font-bold text-center">
+                            <h5>PLATINUM</h5>
+                        </div>
+                        <div>
+                            <div class="p-5">
+                                <h5 class="font-semibold text-lg mb-2">Latihan Mandiri</h5>
+                                <ul class="list-disc ml-4 mt-2 mb-4">
+                                    <li class="paket-list border-b border-black mb-1"><span class="relative -right-1 -top-1">Latihan Soal dan Pembahasan SKD Update 2024. <b class="font-semibold">11.000 Soal</b></span></li>
+                                    <li class="paket-list border-b border-black mb-1"><span class="relative -right-1 -top-1">analisis statistik kemampuan tes dan perangkingan nasional</span></li>
+                                    <li class="paket-list border-b border-black mb-1"><span class="relative -right-1 -top-1">Try Out CAT asesment : <b class="font-semibold">4 kali belajar</b></span></li>
+                                </ul>
+                                <h5 class="font-semibold text-lg mb-2">Video Belajar mandiri</h5>
+                                <ul class="list-disc ml-4 mt-2 mb-4">
+                                    <li class="paket-list border-b border-black mb-1"><span class="relative -right-1 -top-1">1.100 video pembelajaran SKD update 2024. <b class="font-semibold">TIU, TWK, TKP</b></span></li>
+                                    <li class="paket-list border-b border-black mb-1"><span class="relative -right-1 -top-1">perpustakaan Digital : <b class="font-semibold">Koleksi E-book dan kanal rekap materi</b></span></li>
+                                </ul>
+                                <h5 class="font-semibold text-lg mb-2">E-Mentoring</h5>
+                                <ul class="list-disc ml-4 mt-2 mb-4">
+                                    <li class="paket-list border-b border-black mb-1"><span class="relative -right-1 -top-1">Grup diskusi CASN 2024</span></li>
+                                    <li class="paket-list border-b border-black mb-1"><span class="relative -right-1 -top-1">Grup Belajar CASN 2024</span></li>
+                                    <li class="paket-list border-b border-black mb-1"><span class="relative -right-1 -top-1">tanya privat member via aplikasi</span></li>
+                                    <li class="paket-list border-b border-black mb-1"><span class="relative -right-1 -top-1">live streaming belajar langsung dari mentor secara online via youtube</span></li>
+                                </ul>
+                            </div>
+                            <div class="p-4">
+                                <div></div>
+                                <h5 class="text-sm mb-2"><span class="text-red-600 bg-red-200 p-1">50%</span><s class="opacity-50 ml-2">Rp. 769.000</s></h5>
+                                <h3 class="font-bold text-2xl mb-6">Rp 399.000</h3>
+                                <a href="#" class="block text-center bg-[#2dbabc] py-2 rounded-md shadow-lg text-white mb-2">BELI PAKET</a>
+                                <h3 class="font-bold text-2xl mb-6 text-center">Gunakan Kode Kupon "Solawatkidulu"</h3>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+        <script src="script2.js"></script>
+</body>
+</html>
+
+<!-- Swiper === -->
+    <!-- <div id="Home" class="swiper">
+        <div class="swiper-wrapper h-fit">
+            <div class="swiper-slide">
+                <img class="w-full object-cover object-center" src="https://testasn.com/assets-compro/img/banner/banner-3.png" alt="">
+            </div>
+            <div class="swiper-slide">
+                <img class="w-full object-cover object-center" src="https://testasn.com/assets-compro/img/banner/banner-9.png" alt="">
+            </div>
+            <div class="swiper-slide">
+                <img class="w-full object-cover object-center" src="https://testasn.com/assets-compro/img/banner/banner-7.png" alt="">
+            </div>
+        </div>
+        <div class="swiper-button-prev text-white ml-3 lg:inline hidden"></div>
+        <div class="swiper-button-next text-white mr-3 lg:inline hidden"></div>
+    </div> -->

@@ -178,7 +178,6 @@ function addTestimonialsToContainer(testimonials) {
 
     }
 
-
 // // Quotes
 // document.addEventListener("DOMContentLoaded", function() {
 //     const textElements = document.querySelectorAll('.quotes');
