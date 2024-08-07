@@ -93,3 +93,33 @@ const observerDown = new IntersectionObserver((entries) => {
     
 const hiddenTopElements = document.querySelectorAll('.hdnTop');
 hiddenTopElements.forEach((el) => observerDown.observe(el));
+
+
+// PAKET BUTTON ON CLICK
+
+const buttonsPaket = document.querySelectorAll('.btn-paket');
+
+buttonsPaket.forEach((button, index) => {
+    button.addEventListener("click", function() {
+        const pakets = document.querySelectorAll('.pakets');
+        // adding background to packet
+        if (button.classList.contains('btn-bg-click')) {
+            return; // Exit the function if it does
+        }
+
+        // adding background to button when clicked
+        buttonsPaket.forEach(btn => {
+            btn.classList.remove('btn-bg-click');
+        });
+        
+        pakets.forEach(paket => {
+            paket.classList.add('hidden');
+            paket.classList.remove('flex');
+        });
+        if (index < pakets.length) {
+            pakets[index].classList.toggle('hidden');
+            pakets[index].classList.toggle('flex');
+        }
+        button.classList.add('btn-bg-click');
+    })
+});
