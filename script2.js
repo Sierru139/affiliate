@@ -123,3 +123,34 @@ buttonsPaket.forEach((button, index) => {
         button.classList.add('btn-bg-click');
     })
 });
+
+
+const swiper2 = new Swiper('.swiper2', {
+    // Optional parameters
+    direction: 'horizontal',
+    loop: true,
+    breakpoints: {
+        520: {
+            slidesPerView: 1,
+            spaceBetween: 10
+        },
+        720: {
+            slidesPerView: 2,
+            spaceBetween: 10
+        },
+        1020: {
+            slidesPerView: 2,
+            spaceBetween: 10,
+        }
+    },
+
+    pagination: {
+        el: '.swiper2 .swiper-pagination',
+        // dynamicBullets: true,
+        clickable: true,
+    },
+
+    autoplay: {
+        delay: 5000,
+    },
+})
