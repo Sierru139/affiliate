@@ -1,0 +1,1438 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <title>BLC Kreasi Nektar</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,200..1000;1,200..1000&display=swap" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+    <style>
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: "nunito", sans-serif;
+        }
+
+        .text-hover {
+            transition: .8s;
+        }
+
+        .text-hover:hover {
+            box-shadow: inset 300px 0px 0px rgb(77, 135, 206);
+        }
+
+        .goDown {
+            animation: navDown .5s ease;
+        }
+
+        @keyframes navDown {
+            0% {
+                transform: translateY(-100%);
+                opacity: 0;
+            }
+
+            100% {
+                transform: translateY(0);
+                opacity: 1;
+            }
+        }
+
+        .resGoDown {
+            animation: navRespoDown .3s linear;
+        }
+
+        @keyframes navRespoDown {
+            0% {
+                transform: translateX(100%);
+                opacity: 0;
+            }
+
+            100% {
+                transform: translateX(0);
+                opacity: 1;
+            }
+        }
+        
+        .hdn {
+            scale: .2;
+            opacity: 0;
+            transform: translateY(40%);
+            transition: all .8s;
+        }
+
+        .hdnBtm {
+            opacity: 0;
+            transform: translateY(40%);
+            transition: all .8s;
+        }
+
+        .hdnTop {
+            opacity: 0;
+            transform: translateY(-40%);
+            transition: all .7s;
+        }
+
+        .show {
+            scale: 1;
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .quotes span {
+            display: inline-block;
+            opacity: 0;
+            transform: translateY(-10px);
+            animation: fadeInUp .5s forwards;
+        }
+
+        @keyframes fadeInUp {
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .nav-close {
+            animation: nav-close .7s ease;
+        }
+
+        @keyframes nav-close {
+            0% {
+                transform: translateX(0);
+                opacity: 1;
+            }
+            100% {
+                transform: translateX(100%);
+                opacity: 0;
+            }
+        }
+
+        /* FINGER ANIMATE */
+        .arrow-down-animate {
+            animation: arrowDown 1s ease-in-out infinite;
+        }
+        .arrow-down-left-animate {
+            animation: arrowDownLeft 1s ease-in-out infinite;
+        }
+        .arrow-down-right-animate {
+            animation: arrowDownRight 1s ease-in-out infinite;
+        }
+        @keyframes arrowDown {
+            0% {
+                transform: translateY(0%);
+            }
+            50% {
+                transform: translateY(100%);
+            }
+        }
+        @keyframes arrowDownLeft {
+            0% {
+                transform: translate(0%, 0%);
+            }
+            50% {
+                transform: translate(30%, 100%);
+            }
+        }
+        @keyframes arrowDownRight {
+            0% {
+                transform: translate(0%, 0%);
+            }
+            50% {
+                transform: translate(-30%, 100%);
+            }
+        }
+
+        .barrier {
+            background-image: url('download.svg');
+            background-repeat: repeat-x;
+            
+        }
+
+        .animate-finger {
+            animation: moveDown 1s ease infinite;
+        }
+
+        @keyframes moveDown {
+            0% {
+                transform: translateY(0);
+            }
+            50% {
+                transform: translateY(2rem);
+            }
+        }
+    </style>
+</head>
+
+<body style="background-image: url('../assets/images/bg-home.jpg'); background-repeat: repeat;">
+
+    <header class="navbar top-0 left-0 right-0 absolute flex justify-end items-center lg:py-6 py-3 px-5 border-[#ffffff25] text-white font-semibold z-50 opacity-0 duration-100">
+        <div class="sm:flex hidden">
+            <a class="mr-6" href="#Home">Home</a>
+            <a class="mr-6" href="#Tryout">Tryout</a>
+            <a class="mr-6" href="#Bimbel">Bimbel CPNS</a>
+            <a class="mr-6" href="#Testimonial">Testimonial</a>
+        </div>
+        <div class="sm:hidden block">
+            <div id="resNav" class="border rounded-md px-2 ">
+                <i class="resBtn fas fa-bars"></i>
+            </div>
+            <div id="resMenu" class="fixed top-0 bottom-0 right-0 py-6 px-12 bg-white text-black hidden resGoDown z-50">
+                <div id="resNavClose" class="inline absolute rounded-md right-5">
+                    <i class="fas fa-x"></i>
+                </div>
+                <div class="block"></div>
+                <div class="mt-8">
+                    <a class="mr-6 block border-b py-3"  href="#Home">Home</a>
+                    <a class="mr-6 block border-b py-3"  href="#Tryout">Tryout</a>
+                    <a class="mr-6 block border-b py-3"  href="#Bimbel">Bimbel CPNS</a>
+                    <a class="mr-6 block border-b py-3"  href="#Testimonial">Testimonial</a>
+                </div>
+            </div>
+        </div>
+    </header>
+    <!-- LANDING PAGE ====== -->
+    <!-- LANDING PAGE ====== -->
+
+    <section id="Home" class="h-fit mb-8">
+        <div class="bg-blue-400 py-12 w-full relative justify-center flex hdnTop">
+            <div class="text-center max-w-[1000px] mx-auto px-4 z-10">
+                <h1 class="md:text-5xl text-3xl font-bold text-white">Siap-siap! kamu menjadi ASN Tahun ini</h1>
+            </div>
+        </div>
+        <div class="flex justify-center max-w-[475px] mx-auto hdnBtm">
+            <img src="../assets/images/page-1/home-img1.png" class="" alt="">
+        </div>
+
+        <div class="bg-blue-400 py-8 relative justify-center flex px-4 hdnBtm">
+            <h1 class="md:text-4xl text-3xl font-bold text-white">Inikah kamu saat ini..</h1>
+        </div>
+        <div class="max-w-[1320px] mx-auto">
+            <div class="flex lg:flex-row flex-col px-4">
+                <div class="flex-[50%]">
+                    <div class="text-lg md:py-12 py-4">
+                        <h4 class="mb-2 flex hdnBtm"><i class="fas fas fa-check mr-3 text-blue-500"></i><span><b>Masih sangat minim persiapan?</b> Ikut Try out masih saja belum lolos. bagaimana nanti tes aslinya? </span></h4>
+                        <h4 class="mb-2 flex hdnBtm"><i class="fas fas fa-check mr-3 text-blue-500"></i><span><b>Sangat khawatir tentang soal tes yang sulit?</b> Betapa menakutkannya soal-soal sulit kategori HOTS yang butuh penalaran dan pemikiran yang amat mendalam.</span></h4>
+                        <h4 class="mb-2 flex hdnBtm"><i class="fas fas fa-check mr-3 text-blue-500"></i><span><b>Takut gagal?</b> Rasa takut itu bisa menghantui setiap malam. Wajar jika merasa berada di posisi itu.</span></h4>
+                        <h4 class="mb-2 flex hdnBtm"><i class="fas fas fa-check mr-3 text-blue-500"></i><span><b>Bingung, Tidak Tahu Harus Mulai dari Mana?</b> Banyaknya materi bisa membuat Anda bingung dan merasa kewalahan.</span></h4>
+                        <h4 class="mb-2 flex hdnBtm"><i class="fas fas fa-check mr-3 text-blue-500"></i><span><b>Sudah lama dambakan menjadi ASN?</b> karena menjadi Honorarium itu capek dan makan hati.</span></h4>
+                        <h4 class="mb-2 flex hdnBtm"><i class="fas fas fa-check mr-3 text-blue-500"></i><span><b>Beberapa kali ikut tes seleksi CPNS, PPPK</b> tapi masih belum lolos?</span></h4>
+                        <h4 class="mb-2 flex hdnBtm"><i class="fas fas fa-check mr-3 text-blue-500"></i><span><b>Mau ambil bimbingan</b> tapi tidak ada yang kasih garansi?</span></h4>
+
+                    </div>
+                </div>
+                <div class="flex-[50%] flex justify-center">
+                    <img class="hdnTop" src="./assets/images/page-1/home-img3.png" alt="">
+                </div>
+            </div>
+        </div>
+
+        <div class="bg-blue-400 py-8 relative justify-center flex px-4 hdnBtm">
+            <h1 class="md:text-4xl text-3xl font-bold text-white">Namun..</h1>
+        </div>
+        <div class="max-w-[1320px] mx-auto">
+            <div class="flex lg:flex-row flex-col items-center px-4">
+                <div class="flex-[50%] md:py-12 py-4">
+                    <div class="text-lg">
+                        <h4 class="mb-2 flex hdnBtm"><i class="fas fas fa-check mr-3 text-blue-500"></i><span><b>Bagaimana</b> jika saya tidak lulus tes nantinya? </span></h4>
+                        <h4 class="mb-2 flex hdnBtm"><i class="fas fas fa-check mr-3 text-blue-500"></i><span><b>Bagaimana masa depan karir saya?</b></span></h4>
+                        <h4 class="mb-2 flex hdnBtm"><i class="fas fas fa-check mr-3 text-blue-500"></i><span><b>Bagaimana menyelesaikan soal tes yang rumit?</b> Bisakah saya benar-benar memahaminya dengan baik?</span></h4>
+                        <h4 class="mb-2 flex hdnBtm"><i class="fas fas fa-check mr-3 text-blue-500"></i><span><b>Saya sibuk dengan pekerjaan dan kehidupan sehari-hari.</b> Bagaimana saya bisa menemukan waktu untuk belajar?</span></h4>
+                        <h4 class="mb-2 flex hdnBtm"><i class="fas fas fa-check mr-3 text-blue-500"></i><span><b>Saya merasa sendirian dalam perjuangan ini.</b> Saya butuh seseorang yang mengerti dan bisa membantu saya.</span></h4>
+                        <h4 class="mb-2 flex hdnBtm"><i class="fas fas fa-check mr-3 text-blue-500"></i><span><b>Saya tidak tahu memilih bimbingan yang tepat buat saya?</b></span></h4>
+                    </div>
+                </div>
+                <div class="flex-[50%] flex justify-center">
+                    <img class="hdnTop" src="../assets/images/page-1/home-img2.png" alt="">
+                </div>
+            </div>
+        </div>
+        <div class="max-w-[1320px] mx-auto text-center py-12 bg-[#b8b8b818] backdrop-blur-xl rounded-xl shadow-md px-6 hdnTo8">
+            <h3 class="md:text-2xl text-lg max-w-[650px] mx-auto opacity-75 hdnTop quotes italic">"Jangan biarkan ketakutan dan kekhawatiran menghalangi impian Kamu. Kami di sini untuk membantu Kamu berhasil menggapai impian kamu menjadi ASN!"</h3>
+            <h1 class="md:text-5xl text-4xl font-bold my-12 opacity-70 hdnTop bg-slate-400 inline-block">Kamu tidak sendiri.</h1>
+            <h3 class="md:text-3xl text-xl max-w-[650px]  mx-auto opacity-70 hdnTop quotes ">"Karena Kami menawarkan bimbingan intensif dengan strategi khusus untuk membantu Kamu mempersiapkan diri menghadapi tes CPNS dan PPPK dengan percaya diri."</h3>
+        </div>
+    </section>
+
+
+    <!-- SECTION 1 RATING -->
+    <!-- SECTION 1 RATING -->
+    <section class="max-w-[1320px] mx-auto px-6 py-8">
+        <div class="flex flex-col items-center text-center hdnBtm">
+            <div class="text-yellow-400 text-2xl">
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+            </div>
+            <div class="mt-3">
+                <h5>(Rating dari <span class="font-bold">50.000+ Pengguna</span>)</h5>
+            </div>
+        </div>
+        <div class="flex lg:flex-row flex-col mt-12 lg:max-w-none max-w-[380px] mx-auto">
+            <div class="flex-1 bg-blue-400 hdn shadow-md ">
+                <div class="max-w-[350px] mx-auto h-full px-8 py-6 flex items-center justify-center">
+                    <div class="lg:min-h-20 lg:min-w-20 min-w-16 min-h-16 flex items-center justify-center bg-blue-100 rounded-sm text-xl">
+                        <i class="fas fa-users"></i>
+                    </div>
+                    <div class="pl-4 grow">
+                        <h5 class="font-bold  text-2xl">Member</h5>
+                        <h3 class="font-semibold ">50.000+ Alumni</h3> 
+                    </div>
+                </div>
+            </div>
+            <div class="flex-1 bg-blue-100 hdn shadow-md ">
+                <div class="max-w-[350px] mx-auto h-full px-8 py-6 flex items-center justify-center">
+                    <div class="lg:min-h-20 lg:min-w-20 min-w-16 min-h-16 flex items-center justify-center bg-blue-400 rounded-sm text-xl">
+                        <i class="fas fa-dollar"></i>
+                    </div>
+                    <div class="pl-4 grow">
+                        <h5 class="font-bold  text-xl">Garansi 100% <br>Uang Kembali</h5>
+                        <h3 class="font-semibold text-sm">*S&K Berlaku</h3>
+                    </div>
+                </div>
+            </div>
+            <div class="flex-1 bg-blue-400 hdn shadow-md ">
+                <div class="max-w-[350px] mx-auto h-full px-8 py-6 flex items-center justify-center">
+                    <div class="lg:min-h-20 lg:min-w-20 min-w-16 min-h-16 flex items-center justify-center bg-blue-100 rounded-sm text-xl">
+                        <i class="fas fa-medal"></i>
+                    </div>
+                    <div class="pl-4 grow">
+                        <h5 class="font-bold  text-xl">Bimbel terpercaya <br>sejak Tahun 2008</h5>
+                        <!-- <h3 class="font-bol text-smd text-4xl">1</h3> -->
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SECTION 2 BENEFIT -->
+    <!-- SECTION 2 BENEFIT -->
+    <section class="max-w-[1320px] mx-auto px-6 py-8">
+        <div class="flex lg:flex-row flex-col">
+            <div class="flex-[59%]">
+                <h4 class="lg:text-2xl text-xl font-bold text-blue-500 hdn">JANGAN KHAWATIR !!!</h4>
+                <h2 class="lg:text-4xl text-3xl font-bold mb-10 hdn">Karena Bimbel Bintaro Learning Center (BLC) Punya Solusinya Untuk Lulus</h2>
+                <p class="mb-6 opacity-85 hdn">
+                    "<b>Bintaro Learning Center</b> adalah Pusat Bimbel Persiapan Tes Seleksi CPNS/PPPK terbesar dan terbaik di Indonesia & sudah membantu 50.000+ anggota ASN untuk lulus."
+                </p>
+                <div class="flex lg:flex-row flex-col mb-8 ">
+                    <div class="flex-1">
+                        <h4 class=" mb-2 flex hdnBtm"><i class="fas fas fa-check mr-3 text-blue-500"></i><span>Bimbel ASN terpercaya sejak 2008 & sudah membantu 50.000+ alumni</span></h4>
+                        <h4 class=" mb-2 flex hdnBtm"><i class="fas fas fa-check mr-3 text-blue-500"></i><span>Materi SOAL PREDIKTIF SUPER TEPAT DAN SUPER LENGKAP dengan sistem CAT</span></h4>
+                        <h4 class=" mb-2 flex hdnBtm"><i class="fas fas fa-check mr-3 text-blue-500"></i><span>Tim Pengajar Profesional dan Kompeten yang siap membantu peserta lulus Test Seleksi ASN</span></h4>
+                        <h4 class=" mb-2 flex hdnBtm"><i class="fas fas fa-check mr-3 text-blue-500"></i><span>Puluhan Bahkan Ribuan Paket Soal Tryout Online dengan sistem CAT</span></h4>
+                        <h4 class=" mb-2 flex hdnBtm"><i class="fas fas fa-check mr-3 text-blue-500"></i><span>Dilengkapi Dengan Paket Pembahasan Tryout</span></h4>
+                        <h4 class=" mb-2 flex hdnBtm"><i class="fas fas fa-check mr-3 text-blue-500"></i><span>Materi Selalu Terupdate</span></h4>
+                    </div>
+                    <div class="flex-1">
+                        <h4 class=" mb-2 flex hdnBtm"><i class="fas fas fa-check mr-3 text-blue-500"></i><span>Harga Terjangkau</span></h4>
+                        <h4 class=" mb-2 flex hdnBtm"><i class="fas fas fa-check mr-3 text-blue-500"></i><span>Dapat di akses dari mana saja dan kapan saja melalui Play Store dan App Store</span></h4>
+                        <h4 class=" mb-2 flex hdnBtm"><i class="fas fas fa-check mr-3 text-blue-500"></i><span>Mentor Profesional dan Ahli di Bidangnya</span></h4>
+                        <h4 class=" mb-2 flex hdnBtm"><i class="fas fas fa-check mr-3 text-blue-500"></i><span>Pembelajaran Interaktif</span></h4>
+                        <h4 class=" mb-2 flex hdnBtm"><i class="fas fas fa-check mr-3 text-blue-500"></i><span>Konsultasi Gratis 24 Jam</span></h4>
+                        <h4 class=" mb-2 flex hdnBtm"><i class="fas fas fa-check mr-3 text-blue-500"></i><span>Bimbingan belajar yang memberi <span class="font-bold italic text-lg">Garansi 100%</span> uang kembali jika tidak lulus ASN <br> <span class="text-[.7rem]">(S&K Berlaku)</span></span></h4>
+                    </div>
+                </div>
+                <div class="flex mb-8 hdn">
+                    <div class="flex items-center justify-center bg-blue-400 h-20 w-20 text-white text-4xl">
+                        <i class="fab fa-whatsapp"></i>
+                    </div>
+                    <div class="pl-4">
+                        <h3 class="lg:text-xl md:text-lg text-base font-semibold mb-4">Konsultasi Melalui Admin</h3>
+                        <!-- <h3 class="lg:text-3xl text-xl font-semibold text-blue-400">+6285299655699</h3> -->
+                        <a target="_blank" class="text-hover md:px-12 px-6 md:py-3 py-2 bg-blue-400 text-white hdn" href="https://wa.link/zljwni">Tanya Admin</a>
+                    </div>
+                </div>
+                <div>
+                </div>
+            </div>
+            <div class="flex-[41%] flex justify-center">
+                <!-- <img class="hdn" src="https://testasn.com/assets-compro/img/banner/bg-banner-test.png" alt=""> -->
+                <video loading="lazy" class="hdn h-full w-72 object-center" controls src="document_6303250216418019918.mp4"></video>
+            </div>
+        </div>
+    </section>
+
+    <!-- SECTION 3 CLASS -->
+    <!-- SECTION 3 CLASS -->
+    <section id="Tryout" class="max-w-[1320px] mx-auto px-4 py-8">
+        <div class="flex items-center justify-center flex-col text-center">
+            <h4 class="lg:text-2xl text-xl font-bold text-blue-500 hdn">TRYOUT CPNS TERSEDIA</h4>
+            <h2 class="lg:text-4xl text-3xl font-bold mb-10 hdn">Ikuti Tryout Kami</h2>
+        </div>
+        <div class="flex flex-wrap justify-center">
+            <div class="lg:w-3/12 md:w-2/4 w-full px-2 mt-2 rounded-md hdnBtm">
+                <div class="flex flex-col rounded-md overflow-hidden border bg-white">
+                    <div class="h-[200px] relative overflow-hidden">
+                        <img class="images object-cover object-center w-full h-full" src="../assets/images/card-gel/card-gel5.jpg" alt="">
+                    </div>
+                    <div class="p-3">
+                        <div class="mb-1"><span class="text-xs pr-4 py-2"><i class="pr-2 far fa-user "></i>00:00 WIB</span><span class="text-xs pr-4 py-2"><i class="pr-2 far fa-calendar"></i>Jul-Agus 2024</span></div>
+                        <h5 class="text-xl font-semibold mb-1">TRY OUT PREMIUM 2024</h5>
+                        <!-- <div class="line-clamp-3 text-gray-500 mb-4">
+                            Lorem ipsum dolor sit amet consectetur adipisicing elit. Consequuntur voluptas dignissimos eos voluptate eum amet facilis veritatis sit aliquam laborum.
+                        </div> -->
+                        <h5 class="opacity-70 mb-2">Soal SKD dan Pembahasan</h5>
+                        <h5 class="opacity-70 mb-2">Kuota: 23</h5>
+                        <div class="flex justify-end">
+                            <!-- <a class="grow text-blue-600" href="#">DAFTAR TRYOUT</a> -->
+                            <a target="_blank" class=" bg-yellow-400 px-4 py-2"  href="https://wa.link/4343af">Free</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SECTION 4 COACH -->
+    <!-- SECTION 4 COACH -->
+    <section class="max-w-[1320px] mx-auto py-8">
+        <div class="flex items-center justify-center flex-col text-center hdnBtm">
+            <h4 class="lg:text-2xl text-xl font-bold text-blue-500">PENGAJAR PROFESIONAL</h4>
+            <h2 class="lg:text-4xl text-3xl font-bold mb-10">Tenaga Profesional Kami Siap Membantu Belajar Anda</h2>
+        </div>
+        <div class="swiper3 overflow-hidden relative h-fit hdnBtm">
+            <div class="swiper-wrapper h-fit">
+                <div class="swiper-slide grow-0 mt-2" role="group" aria-label="1 / 63" data-swiper-slide-index="0" style="width: 168.667px; margin-right: 10px;">
+                    <div class="flex flex-col bg-blue-100 rounded-md overflow-hidden h-[460px]">
+                        <div class="h-[80%]">
+                            <img class="h-full w-full object-cover object-top" src="../assets/images/mentor/5.png" alt="icon"><br>
+                        </div>
+                        <div class="h-[20%] grow-0 text-center p-2">
+                            <h6 class="text-xl font-bold mb-2 text-blue-400">Dr. Sudirman, S.Pd., M.Si</h6>
+                            <h6 style="color:#444444;">Pengajar TWK</h6>
+                        </div>
+                    </div>
+                </div>
+                <div class="swiper-slide grow-0 mt-2" role="group" aria-label="2 / 63" data-swiper-slide-index="1" style="width: 168.667px; margin-right: 10px;">
+                    <div class="flex flex-col bg-blue-100 rounded-md overflow-hidden h-[460px]">
+                        <div class="h-[80%]">
+                            <img class="h-full w-full object-cover object-top" src="../assets/images/mentor/6.png" alt="icon"><br>
+                        </div>
+                        <div class="h-[20%] grow-0 text-center p-2">
+                            <h6 class="text-xl font-bold mb-2 text-blue-400">Muh. Arief Pratama, S.Pd</h6>
+                            <h6 style="color:#444444;">Pengajar TWK</h6>
+                        </div>
+                    </div>
+                </div>
+                <div class="swiper-slide grow-0 mt-2" role="group" aria-label="3 / 63" data-swiper-slide-index="2" style="width: 168.667px; margin-right: 10px;">
+                    <div class="flex flex-col bg-blue-100 rounded-md overflow-hidden h-[460px]">
+                        <div class="h-[80%]">
+                            <img class="h-full w-full object-cover object-top" src="../assets/images/mentor/new51.png" alt="icon"><br>
+                        </div>
+                        <div class="h-[20%] grow-0 text-center p-2">
+                            <h6 class="text-xl font-bold mb-2 text-blue-400">Ahmad Yani, S.Si., M.Si</h6>
+                            <h6 style="color:#444444;">Pengajar </h6>
+                        </div>
+                    </div>
+                </div>
+                <div class="swiper-slide grow-0 mt-2" role="group" aria-label="4 / 63" data-swiper-slide-index="3" style="width: 168.667px; margin-right: 10px;">
+                    <div class="flex flex-col bg-blue-100 rounded-md overflow-hidden h-[460px]">
+                        <div class="h-[80%]">
+                            <img class="h-full w-full object-cover object-top" src="../assets/images/mentor/new52.png" alt="icon"><br>
+                        </div>
+                        <div class="h-[20%] grow-0 text-center p-2">
+                            <h6 class="text-xl font-bold mb-2 text-blue-400">Nurul Fitrianti, S.St</h6>
+                            <h6 style="color:#444444;">Pengajar </h6>
+                        </div>
+                    </div>
+                </div>
+                <div class="swiper-slide grow-0 mt-2" role="group" aria-label="5 / 63" data-swiper-slide-index="4" style="width: 168.667px; margin-right: 10px;">
+                    <div class="flex flex-col bg-blue-100 rounded-md overflow-hidden h-[460px]">
+                        <div class="h-[80%]">
+                            <img class="h-full w-full object-cover object-top" src="../assets/images/mentor/11-1578302418.png" alt="icon"><br>
+                        </div>
+                        <div class="h-[20%] grow-0 text-center p-2">
+                            <h6 class="text-xl font-bold mb-2 text-blue-400">Ilham S. Arief, ST. M.AK</h6>
+                            <h6 style="color:#444444;">Pengajar SKD - TIU</h6>
+                        </div>
+                    </div>
+                </div>
+                <div class="swiper-slide grow-0 mt-2 swiper-slide-prev" role="group" aria-label="6 / 63" data-swiper-slide-index="5" style="width: 168.667px; margin-right: 10px;">
+                    <div class="flex flex-col bg-blue-100 rounded-md overflow-hidden h-[460px]">
+                        <div class="h-[80%]">
+                            <img class="h-full w-full object-cover object-top" src="../assets/images/mentor/1xghddf-1671591198.jpg" alt="icon"><br>
+                        </div>
+                        <div class="h-[20%] grow-0 text-center p-2">
+                            <h6 class="text-xl font-bold mb-2 text-blue-400">Ratu Bulkis Ramli, S. Pd., M. Pd</h6>
+                            <h6 style="color:#444444;">Pengajar Bahasa Indonesia</h6>
+                        </div>
+                    </div>
+                </div>
+                <div class="swiper-slide grow-0 mt-2 swiper-slide-active" role="group" aria-label="7 / 63" data-swiper-slide-index="6" style="width: 168.667px; margin-right: 10px;">
+                    <div class="flex flex-col bg-blue-100 rounded-md overflow-hidden h-[460px]">
+                        <div class="h-[80%]">
+                            <img class="h-full w-full object-cover object-top" src="../assets/images/mentor/48.png" alt="icon"><br>
+                        </div>
+                        <div class="h-[20%] grow-0 text-center p-2">
+                            <h6 class="text-xl font-bold mb-2 text-blue-400">Rakhmat Nurul Prima Nugraha, SE., M.Sc</h6>
+                            <h6 style="color:#444444;">Pengajar Ekonomi</h6>
+                        </div>
+                    </div>
+                </div>
+                <div class="swiper-slide grow-0 mt-2 swiper-slide-next" role="group" aria-label="8 / 63" data-swiper-slide-index="7" style="width: 168.667px; margin-right: 10px;">
+                    <div class="flex flex-col bg-blue-100 rounded-md overflow-hidden h-[460px]">
+                        <div class="h-[80%]">
+                            <img class="h-full w-full object-cover object-top" src="../assets/images/mentor/51.png" alt="icon"><br>
+                        </div>
+                        <div class="h-[20%] grow-0 text-center p-2">
+                            <h6 class="text-xl font-bold mb-2 text-blue-400">Astati Made Amin, S.Si.T., M.Kes</h6>
+                            <h6 style="color:#444444;">Pengajar Analis Gizi</h6>
+                        </div>
+                    </div>
+                </div>
+                <div class="swiper-slide grow-0 mt-2" role="group" aria-label="9 / 63" data-swiper-slide-index="8" style="width: 168.667px; margin-right: 10px;">
+                    <div class="flex flex-col bg-blue-100 rounded-md overflow-hidden h-[460px]">
+                        <div class="h-[80%]">
+                            <img class="h-full w-full object-cover object-top" src="../assets/images/mentor/430.png" alt="icon"><br>
+                        </div>
+                        <div class="h-[20%] grow-0 text-center p-2">
+                            <h6 class="text-xl font-bold mb-2 text-blue-400">Fitri Handayani, M.Si</h6>
+                            <h6 style="color:#444444;">Pengajar BIOLOGI DAN KESEHATAN UMUM</h6>
+                        </div>
+                    </div>
+                </div>
+                <div class="swiper-slide grow-0 mt-2" role="group" aria-label="10 / 63" data-swiper-slide-index="9" style="width: 168.667px; margin-right: 10px;">
+                    <div class="flex flex-col bg-blue-100 rounded-md overflow-hidden h-[460px]">
+                        <div class="h-[80%]">
+                            <img class="h-full w-full object-cover object-top" src="../assets/images/mentor/new-img.png" alt="icon"><br>
+                        </div>
+                        <div class="h-[20%] grow-0 text-center p-2">
+                            <h6 class="text-xl font-bold mb-2 text-blue-400">Tiara Shinta Istiqamah, S.Psi</h6>
+                            <h6 style="color:#444444;">Pengajar TKP</h6>
+                        </div>
+                    </div>
+                </div>
+                <div class="swiper-slide grow-0 mt-2" role="group" aria-label="11 / 63" data-swiper-slide-index="10" style="width: 168.667px; margin-right: 10px;">
+                    <div class="flex flex-col bg-blue-100 rounded-md overflow-hidden h-[460px]">
+                        <div class="h-[80%]">
+                            <img class="h-full w-full object-cover object-top" src="../assets/images/mentor/1xlas9p-1671591136.jpg" alt="icon"><br>
+                        </div>
+                        <div class="h-[20%] grow-0 text-center p-2">
+                            <h6 class="text-xl font-bold mb-2 text-blue-400">Ibnu Winardy Khaerul, S.Si</h6>
+                            <h6 style="color:#444444;">Pengajar TIU</h6>
+                        </div>
+                    </div>
+                </div>
+                <div class="swiper-slide grow-0 mt-2" role="group" aria-label="12 / 63" data-swiper-slide-index="11" style="width: 168.667px; margin-right: 10px;">
+                    <div class="flex flex-col bg-blue-100 rounded-md overflow-hidden h-[460px]">
+                        <div class="h-[80%]">
+                            <img class="h-full w-full object-cover object-top" src="../assets/images/mentor/120.png" alt="icon"><br>
+                        </div>
+                        <div class="h-[20%] grow-0 text-center p-2">
+                            <h6 class="text-xl font-bold mb-2 text-blue-400">M. Yunasri Ridhoh, S.Pd., M.Pd.</h6>
+                            <h6 style="color:#444444;">Pengajar TWK</h6>
+                        </div>
+                    </div>
+                </div>
+                <div class="swiper-slide grow-0 mt-2" role="group" aria-label="13 / 63" data-swiper-slide-index="12" style="width: 168.667px; margin-right: 10px;">
+                    <div class="flex flex-col bg-blue-100 rounded-md overflow-hidden h-[460px]">
+                        <div class="h-[80%]">
+                            <img class="h-full w-full object-cover object-top" src="../assets/images/mentor/121.png" alt="icon"><br>
+                        </div>
+                        <div class="h-[20%] grow-0 text-center p-2">
+                            <h6 class="text-xl font-bold mb-2 text-blue-400">Muhammad Alimka, S.Pd.</h6>
+                            <h6 style="color:#444444;">Pengajar TKP</h6>
+                        </div>
+                    </div>
+                </div>
+                <div class="swiper-slide grow-0 mt-2" role="group" aria-label="14 / 63" data-swiper-slide-index="13" style="width: 168.667px; margin-right: 10px;">
+                    <div class="flex flex-col bg-blue-100 rounded-md overflow-hidden h-[460px]">
+                        <div class="h-[80%]">
+                            <img class="h-full w-full object-cover object-top" src="../assets/images/mentor/127.png" alt="icon"><br>
+                        </div>
+                        <div class="h-[20%] grow-0 text-center p-2">
+                            <h6 class="text-xl font-bold mb-2 text-blue-400">Sary Mastria, S.Pd.</h6>
+                            <h6 style="color:#444444;">Pengajar </h6>
+                        </div>
+                    </div>
+                </div>
+                <div class="swiper-slide grow-0 mt-2" role="group" aria-label="15 / 63" data-swiper-slide-index="14" style="width: 168.667px; margin-right: 10px;">
+                    <div class="flex flex-col bg-blue-100 rounded-md overflow-hidden h-[460px]">
+                        <div class="h-[80%]">
+                            <img class="h-full w-full object-cover object-top" src="../assets/images/mentor/153.png" alt="icon"><br>
+                        </div>
+                        <div class="h-[20%] grow-0 text-center p-2">
+                            <h6 class="text-xl font-bold mb-2 text-blue-400">Muli Sukmawaty S.Farm.Apt</h6>
+                            <h6 style="color:#444444;">Pengajar Farmasi</h6>
+                        </div>
+                    </div>
+                </div>
+                <div class="swiper-slide grow-0 mt-2" role="group" aria-label="16 / 63" data-swiper-slide-index="15" style="width: 168.667px; margin-right: 10px;">
+                    <div class="flex flex-col bg-blue-100 rounded-md overflow-hidden h-[460px]">
+                        <div class="h-[80%]">
+                            <img class="h-full w-full object-cover object-top" src="../assets/images/mentor/152.png" alt="icon"><br>
+                        </div>
+                        <div class="h-[20%] grow-0 text-center p-2">
+                            <h6 class="text-xl font-bold mb-2 text-blue-400">Asyif Awaludin Romadhoni, M.Pd</h6>
+                            <h6 style="color:#444444;">Pengajar SOSIAL KULTURAL</h6>
+                        </div>
+                    </div>
+                </div>
+                <div class="swiper-slide grow-0 mt-2" role="group" aria-label="17 / 63" data-swiper-slide-index="16" style="width: 168.667px; margin-right: 10px;">
+                    <div class="flex flex-col bg-blue-100 rounded-md overflow-hidden h-[460px]">
+                        <div class="h-[80%]">
+                            <img class="h-full w-full object-cover object-top" src="../assets/images/mentor/RahmatHidayat.jpg" alt="icon"><br>
+                        </div>
+                        <div class="h-[20%] grow-0 text-center p-2">
+                            <h6 class="text-xl font-bold mb-2 text-blue-400">Rahmat Hidayat, S.Kep., Ns., M.Kep</h6>
+                            <h6 style="color:#444444;">Pengajar Keperawatan &amp; Ners</h6>
+                        </div>
+                    </div>
+                </div>
+                <div class="swiper-slide grow-0 mt-2" role="group" aria-label="18 / 63" data-swiper-slide-index="17" style="width: 168.667px; margin-right: 10px;">
+                    <div class="flex flex-col bg-blue-100 rounded-md overflow-hidden h-[460px]">
+                        <div class="h-[80%]">
+                            <img class="h-full w-full object-cover object-top" src="../assets/images/mentor/Tentor_5.jpg" alt="icon"><br>
+                        </div>
+                        <div class="h-[20%] grow-0 text-center p-2">
+                            <h6 class="text-xl font-bold mb-2 text-blue-400">Dr. Besse Ruhaya, S.Pd.I., M.Pd.I.</h6>
+                            <h6 style="color:#444444;">Pengajar PAI SMA</h6>
+                        </div>
+                    </div>
+                </div>
+                <div class="swiper-slide grow-0 mt-2" role="group" aria-label="19 / 63" data-swiper-slide-index="18" style="width: 168.667px; margin-right: 10px;">
+                    <div class="flex flex-col bg-blue-100 rounded-md overflow-hidden h-[460px]">
+                        <div class="h-[80%]">
+                            <img class="h-full w-full object-cover object-top" src="../assets/images/mentor/Tentor_4.jpg" alt="icon"><br>
+                        </div>
+                        <div class="h-[20%] grow-0 text-center p-2">
+                            <h6 class="text-xl font-bold mb-2 text-blue-400">Prasesty, S.Si</h6>
+                            <h6 style="color:#444444;">Pengajar M</h6>
+                        </div>
+                    </div>
+                </div>
+                <div class="swiper-slide grow-0 mt-2" role="group" aria-label="20 / 63" data-swiper-slide-index="19" style="width: 168.667px; margin-right: 10px;">
+                    <div class="flex flex-col bg-blue-100 rounded-md overflow-hidden h-[460px]">
+                        <div class="h-[80%]">
+                            <img class="h-full w-full object-cover object-top" src="../assets/images/mentor/2x4yj87-1671591952.jpg" alt="icon"><br>
+                        </div>
+                        <div class="h-[20%] grow-0 text-center p-2">
+                            <h6 class="text-xl font-bold mb-2 text-blue-400">Muhardi, S.Pd.I</h6>
+                            <h6 style="color:#444444;">Pengajar PAI SMP</h6>
+                        </div>
+                    </div>
+                </div>
+                <div class="swiper-slide grow-0 mt-2" role="group" aria-label="21 / 63" data-swiper-slide-index="20" style="width: 168.667px; margin-right: 10px;">
+                    <div class="flex flex-col bg-blue-100 rounded-md overflow-hidden h-[460px]">
+                        <div class="h-[80%]">
+                            <img class="h-full w-full object-cover object-top" src="../assets/images/mentor/1xjaj8d-1675328241.jpg" alt="icon"><br>
+                        </div>
+                        <div class="h-[20%] grow-0 text-center p-2">
+                            <h6 class="text-xl font-bold mb-2 text-blue-400">Rosalia Nugraheni, M.Psi., Psikolog</h6>
+                            <h6 style="color:#444444;">Pengajar TKP</h6>
+                        </div>
+                    </div>
+                </div>
+                <div class="swiper-slide grow-0 mt-2" role="group" aria-label="22 / 63" data-swiper-slide-index="21" style="width: 168.667px; margin-right: 10px;">
+                    <div class="flex flex-col bg-blue-100 rounded-md overflow-hidden h-[460px]">
+                        <div class="h-[80%]">
+                            <img class="h-full w-full object-cover object-top" src="../assets/images/mentor/1xnzvho-1675328286.jpg" alt="icon"><br>
+                        </div>
+                        <div class="h-[20%] grow-0 text-center p-2">
+                            <h6 class="text-xl font-bold mb-2 text-blue-400">Sabit Irfani, S.Pd.,M.Pd.</h6>
+                            <h6 style="color:#444444;">Pengajar TWK</h6>
+                        </div>
+                    </div>
+                </div>
+                <div class="swiper-slide grow-0 mt-2" role="group" aria-label="23 / 63" data-swiper-slide-index="22" style="width: 168.667px; margin-right: 10px;">
+                    <div class="flex flex-col bg-blue-100 rounded-md overflow-hidden h-[460px]">
+                        <div class="h-[80%]">
+                            <img class="h-full w-full object-cover object-top" src="../assets/images/mentor/1x2z7u5-1675668488.jpg" alt="icon"><br>
+                        </div>
+                        <div class="h-[20%] grow-0 text-center p-2">
+                            <h6 class="text-xl font-bold mb-2 text-blue-400">Andre Wijaya, S.S.</h6>
+                            <h6 style="color:#444444;">Pengajar Bahasa Indonesia</h6>
+                        </div>
+                    </div>
+                </div>
+                <div class="swiper-slide grow-0 mt-2" role="group" aria-label="24 / 63" data-swiper-slide-index="23" style="width: 168.667px; margin-right: 10px;">
+                    <div class="flex flex-col bg-blue-100 rounded-md overflow-hidden h-[460px]">
+                        <div class="h-[80%]">
+                            <img class="h-full w-full object-cover object-top" src="../assets/images/mentor/1xezbwp-1675668739.png" alt="icon"><br>
+                        </div>
+                        <div class="h-[20%] grow-0 text-center p-2">
+                            <h6 class="text-xl font-bold mb-2 text-blue-400">Jamal Gesrianto A., S.Pd., M.Hum</h6>
+                            <h6 style="color:#444444;">Pengajar Bahasa Indonesia</h6>
+                        </div>
+                    </div>
+                </div>
+                <div class="swiper-slide grow-0 mt-2" role="group" aria-label="25 / 63" data-swiper-slide-index="24" style="width: 168.667px; margin-right: 10px;">
+                    <div class="flex flex-col bg-blue-100 rounded-md overflow-hidden h-[460px]">
+                        <div class="h-[80%]">
+                            <img class="h-full w-full object-cover object-top" src="../assets/images/mentor/1x7lndk-1675755606.jpg" alt="icon"><br>
+                        </div>
+                        <div class="h-[20%] grow-0 text-center p-2">
+                            <h6 class="text-xl font-bold mb-2 text-blue-400">Jeriko Gormantara, S.Si., M.Si.</h6>
+                            <h6 style="color:#444444;">Pengajar TIU</h6>
+                        </div>
+                    </div>
+                </div>
+                <div class="swiper-slide grow-0 mt-2" role="group" aria-label="26 / 63" data-swiper-slide-index="25" style="width: 168.667px; margin-right: 10px;">
+                    <div class="flex flex-col bg-blue-100 rounded-md overflow-hidden h-[460px]">
+                        <div class="h-[80%]">
+                            <img class="h-full w-full object-cover object-top" src="../assets/images/mentor/2xbuhn3-1677035616.png" alt="icon"><br>
+                        </div>
+                        <div class="h-[20%] grow-0 text-center p-2">
+                            <h6 class="text-xl font-bold mb-2 text-blue-400">Muflih Wahid Hamid, M. Psi. T</h6>
+                            <h6 style="color:#444444;">Pengajar MANAJERIAL</h6>
+                        </div>
+                    </div>
+                </div>
+                <div class="swiper-slide grow-0 mt-2" role="group" aria-label="27 / 63" data-swiper-slide-index="26" style="width: 168.667px; margin-right: 10px;">
+                    <div class="flex flex-col bg-blue-100 rounded-md overflow-hidden h-[460px]">
+                        <div class="h-[80%]">
+                            <img class="h-full w-full object-cover object-top" src="../assets/images/mentor/2xi8k3y-1677035978.png" alt="icon"><br>
+                        </div>
+                        <div class="h-[20%] grow-0 text-center p-2">
+                            <h6 class="text-xl font-bold mb-2 text-blue-400">Syamsir, S.Pd., M.Si.</h6>
+                            <h6 style="color:#444444;">Pengajar MATEMATIKA</h6>
+                        </div>
+                    </div>
+                </div>
+                <div class="swiper-slide grow-0 mt-2" role="group" aria-label="28 / 63" data-swiper-slide-index="27" style="width: 168.667px; margin-right: 10px;">
+                    <div class="flex flex-col bg-blue-100 rounded-md overflow-hidden h-[460px]">
+                        <div class="h-[80%]">
+                            <img class="h-full w-full object-cover object-top" src="../assets/images/mentor/6xgzxg9-1677036138.jpg" alt="icon"><br>
+                        </div>
+                        <div class="h-[20%] grow-0 text-center p-2">
+                            <h6 class="text-xl font-bold mb-2 text-blue-400">Shahnaz wulandary S.Pd M.Pd</h6>
+                            <h6 style="color:#444444;">Pengajar KJ</h6>
+                        </div>
+                    </div>
+                </div>
+                <div class="swiper-slide grow-0 mt-2" role="group" aria-label="29 / 63" data-swiper-slide-index="28" style="width: 168.667px; margin-right: 10px;">
+                    <div class="flex flex-col bg-blue-100 rounded-md overflow-hidden h-[460px]">
+                        <div class="h-[80%]">
+                            <img class="h-full w-full object-cover object-top" src="../assets/images/mentor/2xpm75h-1677036231.png" alt="icon"><br>
+                        </div>
+                        <div class="h-[20%] grow-0 text-center p-2">
+                            <h6 class="text-xl font-bold mb-2 text-blue-400">Astri Aksan S.Si., M.Si</h6>
+                            <h6 style="color:#444444;">Pengajar MATEMATIKA</h6>
+                        </div>
+                    </div>
+                </div>
+                <div class="swiper-slide grow-0 mt-2" role="group" aria-label="30 / 63" data-swiper-slide-index="29" style="width: 168.667px; margin-right: 10px;">
+                    <div class="flex flex-col bg-blue-100 rounded-md overflow-hidden h-[460px]">
+                        <div class="h-[80%]">
+                            <img class="h-full w-full object-cover object-top" src="../assets/images/mentor/2xx7smj-1677036635.png" alt="icon"><br>
+                        </div>
+                        <div class="h-[20%] grow-0 text-center p-2">
+                            <h6 class="text-xl font-bold mb-2 text-blue-400">Ahmad Husain, S.Psi</h6>
+                            <h6 style="color:#444444;">Pengajar TES WAWANCARA</h6>
+                        </div>
+                    </div>
+                </div>
+                <div class="swiper-slide grow-0 mt-2" role="group" aria-label="31 / 63" data-swiper-slide-index="30" style="width: 168.667px; margin-right: 10px;">
+                    <div class="flex flex-col bg-blue-100 rounded-md overflow-hidden h-[460px]">
+                        <div class="h-[80%]">
+                            <img class="h-full w-full object-cover object-top" src="../assets/images/mentor/2x9rbdn-1677037098.jpg" alt="icon"><br>
+                        </div>
+                        <div class="h-[20%] grow-0 text-center p-2">
+                            <h6 class="text-xl font-bold mb-2 text-blue-400">Fitri Amalyah, S.Si., M.Si.</h6>
+                            <h6 style="color:#444444;">Pengajar MATEMATIKA</h6>
+                        </div>
+                    </div>
+                </div>
+                <div class="swiper-slide grow-0 mt-2" role="group" aria-label="32 / 63" data-swiper-slide-index="31" style="width: 168.667px; margin-right: 10px;">
+                    <div class="flex flex-col bg-blue-100 rounded-md overflow-hidden h-[460px]">
+                        <div class="h-[80%]">
+                            <img class="h-full w-full object-cover object-top" src="../assets/images/mentor/2xlmgfa-1677037648.png" alt="icon"><br>
+                        </div>
+                        <div class="h-[20%] grow-0 text-center p-2">
+                            <h6 class="text-xl font-bold mb-2 text-blue-400">Audy Eridsyah Aprilia, S.Psi</h6>
+                            <h6 style="color:#444444;">Pengajar TES WAWANCARA</h6>
+                        </div>
+                    </div>
+                </div>
+                <div class="swiper-slide grow-0 mt-2" role="group" aria-label="33 / 63" data-swiper-slide-index="32" style="width: 168.667px; margin-right: 10px;">
+                    <div class="flex flex-col bg-blue-100 rounded-md overflow-hidden h-[460px]">
+                        <div class="h-[80%]">
+                            <img class="h-full w-full object-cover object-top" src="../assets/images/mentor/2xjnuv5-1677038295.png" alt="icon"><br>
+                        </div>
+                        <div class="h-[20%] grow-0 text-center p-2">
+                            <h6 class="text-xl font-bold mb-2 text-blue-400">Marwah Juwita Yusuf, S.S., M.Hum</h6>
+                            <h6 style="color:#444444;">Pengajar bahasa inggris sma</h6>
+                        </div>
+                    </div>
+                </div>
+                <div class="swiper-slide grow-0 mt-2" role="group" aria-label="34 / 63" data-swiper-slide-index="33" style="width: 168.667px; margin-right: 10px;">
+                    <div class="flex flex-col bg-blue-100 rounded-md overflow-hidden h-[460px]">
+                        <div class="h-[80%]">
+                            <img class="h-full w-full object-cover object-top" src="../assets/images/mentor/2xdd5yb-1677038362.png" alt="icon"><br>
+                        </div>
+                        <div class="h-[20%] grow-0 text-center p-2">
+                            <h6 class="text-xl font-bold mb-2 text-blue-400">Andi Batara Al Isra, S.Sos, MA</h6>
+                            <h6 style="color:#444444;">Pengajar SEJARAH</h6>
+                        </div>
+                    </div>
+                </div>
+                <div class="swiper-slide grow-0 mt-2" role="group" aria-label="35 / 63" data-swiper-slide-index="34" style="width: 168.667px; margin-right: 10px;">
+                    <div class="flex flex-col bg-blue-100 rounded-md overflow-hidden h-[460px]">
+                        <div class="h-[80%]">
+                            <img class="h-full w-full object-cover object-top" src="../assets/images/mentor/2xh6gke-1677038444.png" alt="icon"><br>
+                        </div>
+                        <div class="h-[20%] grow-0 text-center p-2">
+                            <h6 class="text-xl font-bold mb-2 text-blue-400">Andi Daniah Pahrany,S.Si, M.Si</h6>
+                            <h6 style="color:#444444;">Pengajar MATEMATIKA SMP</h6>
+                        </div>
+                    </div>
+                </div>
+                <div class="swiper-slide grow-0 mt-2" role="group" aria-label="36 / 63" data-swiper-slide-index="35" style="width: 168.667px; margin-right: 10px;">
+                    <div class="flex flex-col bg-blue-100 rounded-md overflow-hidden h-[460px]">
+                        <div class="h-[80%]">
+                            <img class="h-full w-full object-cover object-top" src="../assets/images/mentor/2xa7ol4-1677038505.png" alt="icon"><br>
+                        </div>
+                        <div class="h-[20%] grow-0 text-center p-2">
+                            <h6 class="text-xl font-bold mb-2 text-blue-400">Rifalgi Agustian Hardono, S.Psi</h6>
+                            <h6 style="color:#444444;">Pengajar TES WAWANCARA</h6>
+                        </div>
+                    </div>
+                </div>
+                <div class="swiper-slide grow-0 mt-2" role="group" aria-label="37 / 63" data-swiper-slide-index="36" style="width: 168.667px; margin-right: 10px;">
+                    <div class="flex flex-col bg-blue-100 rounded-md overflow-hidden h-[460px]">
+                        <div class="h-[80%]">
+                            <img class="h-full w-full object-cover object-top" src="../assets/images/mentor/2xkokci-1677038568.png" alt="icon"><br>
+                        </div>
+                        <div class="h-[20%] grow-0 text-center p-2">
+                            <h6 class="text-xl font-bold mb-2 text-blue-400">Vina Audi Oktaviana S.Pd</h6>
+                            <h6 style="color:#444444;">Pengajar IPA</h6>
+                        </div>
+                    </div>
+                </div>
+                <div class="swiper-slide grow-0 mt-2" role="group" aria-label="38 / 63" data-swiper-slide-index="37" style="width: 168.667px; margin-right: 10px;">
+                    <div class="flex flex-col bg-blue-100 rounded-md overflow-hidden h-[460px]">
+                        <div class="h-[80%]">
+                            <img class="h-full w-full object-cover object-top" src="../assets/images/mentor/2xfqmst-1677043908.png" alt="icon"><br>
+                        </div>
+                        <div class="h-[20%] grow-0 text-center p-2">
+                            <h6 class="text-xl font-bold mb-2 text-blue-400">Nur Diana, S.Pd.,M.Pd</h6>
+                            <h6 style="color:#444444;">Pengajar FISIKA</h6>
+                        </div>
+                    </div>
+                </div>
+                <div class="swiper-slide grow-0 mt-2" role="group" aria-label="39 / 63" data-swiper-slide-index="38" style="width: 168.667px; margin-right: 10px;">
+                    <div class="flex flex-col bg-blue-100 rounded-md overflow-hidden h-[460px]">
+                        <div class="h-[80%]">
+                            <img class="h-full w-full object-cover object-top" src="../assets/images/mentor/2x9kt7a-1677044387.png" alt="icon"><br>
+                        </div>
+                        <div class="h-[20%] grow-0 text-center p-2">
+                            <h6 class="text-xl font-bold mb-2 text-blue-400">Mutmainnah Arham S.Pd</h6>
+                            <h6 style="color:#444444;">Pengajar IPS</h6>
+                        </div>
+                    </div>
+                </div>
+                <div class="swiper-slide grow-0 mt-2" role="group" aria-label="40 / 63" data-swiper-slide-index="39" style="width: 168.667px; margin-right: 10px;">
+                    <div class="flex flex-col bg-blue-100 rounded-md overflow-hidden h-[460px]">
+                        <div class="h-[80%]">
+                            <img class="h-full w-full object-cover object-top" src="../assets/images/mentor/2xj2j8w-1677048420.jpg" alt="icon"><br>
+                        </div>
+                        <div class="h-[20%] grow-0 text-center p-2">
+                            <h6 class="text-xl font-bold mb-2 text-blue-400">Sakinah Zubair, S.Pd.,M.Pd</h6>
+                            <h6 style="color:#444444;">Pengajar KIMIA</h6>
+                        </div>
+                    </div>
+                </div>
+                <div class="swiper-slide grow-0 mt-2" role="group" aria-label="41 / 63" data-swiper-slide-index="40" style="width: 168.667px; margin-right: 10px;">
+                    <div class="flex flex-col bg-blue-100 rounded-md overflow-hidden h-[460px]">
+                        <div class="h-[80%]">
+                            <img class="h-full w-full object-cover object-top" src="../assets/images/mentor/2xbqfbb-1677123687.png" alt="icon"><br>
+                        </div>
+                        <div class="h-[20%] grow-0 text-center p-2">
+                            <h6 class="text-xl font-bold mb-2 text-blue-400">Gusma Harfiana Abbas, S.Si., M.Si.</h6>
+                            <h6 style="color:#444444;">Pengajar KIMIA</h6>
+                        </div>
+                    </div>
+                </div>
+                <div class="swiper-slide grow-0 mt-2" role="group" aria-label="42 / 63" data-swiper-slide-index="41" style="width: 168.667px; margin-right: 10px;">
+                    <div class="flex flex-col bg-blue-100 rounded-md overflow-hidden h-[460px]">
+                        <div class="h-[80%]">
+                            <img class="h-full w-full object-cover object-top" src="../assets/images/mentor/1xai2j4-1681266727.jpg" alt="icon"><br>
+                        </div>
+                        <div class="h-[20%] grow-0 text-center p-2">
+                            <h6 class="text-xl font-bold mb-2 text-blue-400">Sri Wahyuningsih, S.Pd, M.Pd</h6>
+                            <h6 style="color:#444444;">Pengajar TWK</h6>
+                        </div>
+                    </div>
+                </div>
+                <div class="swiper-slide grow-0 mt-2" role="group" aria-label="43 / 63" data-swiper-slide-index="42" style="width: 168.667px; margin-right: 10px;">
+                    <div class="flex flex-col bg-blue-100 rounded-md overflow-hidden h-[460px]">
+                        <div class="h-[80%]">
+                            <img class="h-full w-full object-cover object-top" src="../assets/images/mentor/1xdo2v1-1689058644.jpg" alt="icon"><br>
+                        </div>
+                        <div class="h-[20%] grow-0 text-center p-2">
+                            <h6 class="text-xl font-bold mb-2 text-blue-400">Latif Ariyanto, S.Pd.</h6>
+                            <h6 style="color:#444444;">Pengajar Tes Intelegensi Umum</h6>
+                        </div>
+                    </div>
+                </div>
+                <div class="swiper-slide grow-0 mt-2" role="group" aria-label="44 / 63" data-swiper-slide-index="43" style="width: 168.667px; margin-right: 10px;">
+                    <div class="flex flex-col bg-blue-100 rounded-md overflow-hidden h-[460px]">
+                        <div class="h-[80%]">
+                            <img class="h-full w-full object-cover object-top" src="../assets/images/mentor/2x6ws48-1693454500.jpeg" alt="icon"><br>
+                        </div>
+                        <div class="h-[20%] grow-0 text-center p-2">
+                            <h6 class="text-xl font-bold mb-2 text-blue-400">Fauziah Noviyanti, S.KM. M.Kes.</h6>
+                            <h6 style="color:#444444;">Pengajar KESEHATAN MASYARAKAT</h6>
+                        </div>
+                    </div>
+                </div>
+                <div class="swiper-slide grow-0 mt-2" role="group" aria-label="45 / 63" data-swiper-slide-index="44" style="width: 168.667px; margin-right: 10px;">
+                    <div class="flex flex-col bg-blue-100 rounded-md overflow-hidden h-[460px]">
+                        <div class="h-[80%]">
+                            <img class="h-full w-full object-cover object-top" src="../assets/images/mentor/1xfs1g2-1693462929.png" alt="icon"><br>
+                        </div>
+                        <div class="h-[20%] grow-0 text-center p-2">
+                            <h6 class="text-xl font-bold mb-2 text-blue-400">Dr. Tenri Dasrawati. S.Pd., M.Pd.</h6>
+                            <h6 style="color:#444444;">Pengajar BAHASA INDONESIA</h6>
+                        </div>
+                    </div>
+                </div>
+                <div class="swiper-slide grow-0 mt-2" role="group" aria-label="46 / 63" data-swiper-slide-index="45" style="width: 168.667px; margin-right: 10px;">
+                    <div class="flex flex-col bg-blue-100 rounded-md overflow-hidden h-[460px]">
+                        <div class="h-[80%]">
+                            <img class="h-full w-full object-cover object-top" src="../assets/images/mentor/2xxkpog-1693472040.jpeg" alt="icon"><br>
+                        </div>
+                        <div class="h-[20%] grow-0 text-center p-2">
+                            <h6 class="text-xl font-bold mb-2 text-blue-400">Darwin Safiu SKM.,M.Kes</h6>
+                            <h6 style="color:#444444;">Pengajar PENYULUH KESEHATAN</h6>
+                        </div>
+                    </div>
+                </div>
+                <div class="swiper-slide grow-0 mt-2" role="group" aria-label="47 / 63" data-swiper-slide-index="46" style="width: 168.667px; margin-right: 10px;">
+                    <div class="flex flex-col bg-blue-100 rounded-md overflow-hidden h-[460px]">
+                        <div class="h-[80%]">
+                            <img class="h-full w-full object-cover object-top" src="../assets/images/mentor/2xl6qfb-1694071274.jpg" alt="icon"><br>
+                        </div>
+                        <div class="h-[20%] grow-0 text-center p-2">
+                            <h6 class="text-xl font-bold mb-2 text-blue-400">Iwan Suryadi, SKM.,M.Kes</h6>
+                            <h6 style="color:#444444;">Pengajar KESEHATAN LINGKUNGAN</h6>
+                        </div>
+                    </div>
+                </div>
+                <div class="swiper-slide grow-0 mt-2" role="group" aria-label="48 / 63" data-swiper-slide-index="47" style="width: 168.667px; margin-right: 10px;">
+                    <div class="flex flex-col bg-blue-100 rounded-md overflow-hidden h-[460px]">
+                        <div class="h-[80%]">
+                            <img class="h-full w-full object-cover object-top" src="../assets/images/mentor/kontak_gambar.jpg" alt="icon"><br>
+                        </div>
+                        <div class="h-[20%] grow-0 text-center p-2">
+                            <h6 class="text-xl font-bold mb-2 text-blue-400">Admin BLC</h6>
+                            <h6 style="color:#444444;">Pengajar BLC</h6>
+                        </div>
+                    </div>
+                </div>
+                <div class="swiper-slide grow-0 mt-2" role="group" aria-label="49 / 63" data-swiper-slide-index="48" style="width: 168.667px; margin-right: 10px;">
+                    <div class="flex flex-col bg-blue-100 rounded-md overflow-hidden h-[460px]">
+                        <div class="h-[80%]">
+                            <img class="h-full w-full object-cover object-top" src="../assets/images/mentor/3xid2xf-1717037717.jpg" alt="icon"><br>
+                        </div>
+                        <div class="h-[20%] grow-0 text-center p-2">
+                            <h6 class="text-xl font-bold mb-2 text-blue-400">Sri Wahyuningsih, S.Pd.,M.Pd</h6>
+                            <h6 style="color:#444444;">Pengajar Tes Wawasan Kebangsaan (TWK)</h6>
+                        </div>
+                    </div>
+                </div>
+                <div class="swiper-slide grow-0 mt-2" role="group" aria-label="50 / 63" data-swiper-slide-index="49" style="width: 168.667px; margin-right: 10px;">
+                    <div class="flex flex-col bg-blue-100 rounded-md overflow-hidden h-[460px]">
+                        <div class="h-[80%]">
+                            <img class="h-full w-full object-cover object-top" src="../assets/images/mentor/3xmssat-1717036817.jpg" alt="icon"><br>
+                        </div>
+                        <div class="h-[20%] grow-0 text-center p-2">
+                            <h6 class="text-xl font-bold mb-2 text-blue-400">Cahyudi Gratio T, S.Si</h6>
+                            <h6 style="color:#444444;">Pengajar Tes Intelegensi Umum (TIU)</h6>
+                        </div>
+                    </div>
+                </div>
+                <div class="swiper-slide grow-0 mt-2" role="group" aria-label="51 / 63" data-swiper-slide-index="50" style="width: 168.667px; margin-right: 10px;">
+                    <div class="flex flex-col bg-blue-100 rounded-md overflow-hidden h-[460px]">
+                        <div class="h-[80%]">
+                            <img class="h-full w-full object-cover object-top" src="../assets/images/mentor/3xf4n3v-1717470150.jpg" alt="icon"><br>
+                        </div>
+                        <div class="h-[20%] grow-0 text-center p-2">
+                            <h6 class="text-xl font-bold mb-2 text-blue-400">Audi Aprilia, S.Psi</h6>
+                            <h6 style="color:#444444;">Pengajar Tes Karakteristik Pribadi (TKP)</h6>
+                        </div>
+                    </div>
+                </div>
+                <div class="swiper-slide grow-0 mt-2" role="group" aria-label="52 / 63" data-swiper-slide-index="51" style="width: 168.667px; margin-right: 10px;">
+                    <div class="flex flex-col bg-blue-100 rounded-md overflow-hidden h-[460px]">
+                        <div class="h-[80%]">
+                            <img class="h-full w-full object-cover object-top" src="../assets/images/mentor/3x3j1oh-1717036840.jpg" alt="icon"><br>
+                        </div>
+                        <div class="h-[20%] grow-0 text-center p-2">
+                            <h6 class="text-xl font-bold mb-2 text-blue-400">Mohamad Syahrul Barhun, S.Pd.</h6>
+                            <h6 style="color:#444444;">Pengajar Bahasa Indonesia</h6>
+                        </div>
+                    </div>
+                </div>
+                <div class="swiper-slide grow-0 mt-2" role="group" aria-label="53 / 63" data-swiper-slide-index="52" style="width: 168.667px; margin-right: 10px;">
+                    <div class="flex flex-col bg-blue-100 rounded-md overflow-hidden h-[460px]">
+                        <div class="h-[80%]">
+                            <img class="h-full w-full object-cover object-top" src="../assets/images/mentor/3xchl2d-1717046923.jpg" alt="icon"><br>
+                        </div>
+                        <div class="h-[20%] grow-0 text-center p-2">
+                            <h6 class="text-xl font-bold mb-2 text-blue-400">Ahmad Husain, S.Psi </h6>
+                            <h6 style="color:#444444;">Pengajar Tes Karakteristik Pribadi (TKP)</h6>
+                        </div>
+                    </div>
+                </div>
+                <div class="swiper-slide grow-0 mt-2" role="group" aria-label="54 / 63" data-swiper-slide-index="53" style="width: 168.667px; margin-right: 10px;">
+                    <div class="flex flex-col bg-blue-100 rounded-md overflow-hidden h-[460px]">
+                        <div class="h-[80%]">
+                            <img class="h-full w-full object-cover object-top" src="../assets/images/mentor/3xq138g-1717037152.jpg" alt="icon"><br>
+                        </div>
+                        <div class="h-[20%] grow-0 text-center p-2">
+                            <h6 class="text-xl font-bold mb-2 text-blue-400">Tuti Hariani, S.Mat</h6>
+                            <h6 style="color:#444444;">Pengajar Tes Intelegensi Umum (TIU)</h6>
+                        </div>
+                    </div>
+                </div>
+                <div class="swiper-slide grow-0 mt-2" role="group" aria-label="55 / 63" data-swiper-slide-index="54" style="width: 168.667px; margin-right: 10px;">
+                    <div class="flex flex-col bg-blue-100 rounded-md overflow-hidden h-[460px]">
+                        <div class="h-[80%]">
+                            <img class="h-full w-full object-cover object-top" src="../assets/images/mentor/5xkvzys-1717046885.jpg" alt="icon"><br>
+                        </div>
+                        <div class="h-[20%] grow-0 text-center p-2">
+                            <h6 class="text-xl font-bold mb-2 text-blue-400"> Usti, S.S.,M.Hum</h6>
+                            <h6 style="color:#444444;">Pengajar Bahasa Indonesia</h6>
+                        </div>
+                    </div>
+                </div>
+                <div class="swiper-slide grow-0 mt-2" role="group" aria-label="56 / 63" data-swiper-slide-index="55" style="width: 168.667px; margin-right: 10px;">
+                    <div class="flex flex-col bg-blue-100 rounded-md overflow-hidden h-[460px]">
+                        <div class="h-[80%]">
+                            <img class="h-full w-full object-cover object-top" src="../assets/images/mentor/5xzq82s-1717046764.jpg" alt="icon"><br>
+                        </div>
+                        <div class="h-[20%] grow-0 text-center p-2">
+                            <h6 class="text-xl font-bold mb-2 text-blue-400">Mardasari, S.S</h6>
+                            <h6 style="color:#444444;">Pengajar Bahasa Inggris</h6>
+                        </div>
+                    </div>
+                </div>
+                <div class="swiper-slide grow-0 mt-2" role="group" aria-label="57 / 63" data-swiper-slide-index="56" style="width: 168.667px; margin-right: 10px;">
+                    <div class="flex flex-col bg-blue-100 rounded-md overflow-hidden h-[460px]">
+                        <div class="h-[80%]">
+                            <img class="h-full w-full object-cover object-top" src="../assets/images/mentor/5xvnh8b-1717047588.jpg" alt="icon"><br>
+                        </div>
+                        <div class="h-[20%] grow-0 text-center p-2">
+                            <h6 class="text-xl font-bold mb-2 text-blue-400">Sri Nurwahyuni, S.Mat</h6>
+                            <h6 style="color:#444444;">Pengajar Matematika/Potensi Kognitif</h6>
+                        </div>
+                    </div>
+                </div>
+                <div class="swiper-slide grow-0 mt-2" role="group" aria-label="58 / 63" data-swiper-slide-index="57" style="width: 168.667px; margin-right: 10px;">
+                    <div class="flex flex-col bg-blue-100 rounded-md overflow-hidden h-[460px]">
+                        <div class="h-[80%]">
+                            <img class="h-full w-full object-cover object-top" src="../assets/images/mentor/5xbjrly-1717047564.jpg" alt="icon"><br>
+                        </div>
+                        <div class="h-[20%] grow-0 text-center p-2">
+                            <h6 class="text-xl font-bold mb-2 text-blue-400">Dewini Latief, S.Pd</h6>
+                            <h6 style="color:#444444;">Pengajar Matematika/Potensi Konitif</h6>
+                        </div>
+                    </div>
+                </div>
+                <div class="swiper-slide grow-0 mt-2" role="group" aria-label="59 / 63" data-swiper-slide-index="58" style="width: 168.667px; margin-right: 10px;">
+                    <div class="flex flex-col bg-blue-100 rounded-md overflow-hidden h-[460px]">
+                        <div class="h-[80%]">
+                            <img class="h-full w-full object-cover object-top" src="../assets/images/mentor/4x9uzrv-1717470165.jpg" alt="icon"><br>
+                        </div>
+                        <div class="h-[20%] grow-0 text-center p-2">
+                            <h6 class="text-xl font-bold mb-2 text-blue-400">Dr. Tenri Dasrawati,&nbsp;S.Pd.,M.Pd.</h6>
+                            <h6 style="color:#444444;">Pengajar Bahasa Indonesia</h6>
+                        </div>
+                    </div>
+                </div>
+                <div class="swiper-slide grow-0 mt-2" role="group" aria-label="60 / 63" data-swiper-slide-index="59" style="width: 168.667px; margin-right: 10px;">
+                    <div class="flex flex-col bg-blue-100 rounded-md overflow-hidden h-[460px]">
+                        <div class="h-[80%]">
+                            <img class="h-full w-full object-cover object-top" src="../assets/images/mentor/4xxppjp-1717048009.jpg" alt="icon"><br>
+                        </div>
+                        <div class="h-[20%] grow-0 text-center p-2">
+                            <h6 class="text-xl font-bold mb-2 text-blue-400">Muhammad Arief Pratama,&nbsp;S.Pd.</h6>
+                            <h6 style="color:#444444;">Pengajar Tes Wawasan Kebangsaan (TWK)</h6>
+                        </div>
+                    </div>
+                </div>
+                <div class="swiper-slide grow-0 mt-2" role="group" aria-label="61 / 63" data-swiper-slide-index="60" style="width: 168.667px; margin-right: 10px;">
+                    <div class="flex flex-col bg-blue-100 rounded-md overflow-hidden h-[460px]">
+                        <div class="h-[80%]">
+                            <img class="h-full w-full object-cover object-top" src="../assets/images/mentor/4xq7x54-1717048292.jpg" alt="icon"><br>
+                        </div>
+                        <div class="h-[20%] grow-0 text-center p-2">
+                            <h6 class="text-xl font-bold mb-2 text-blue-400">Latif Ariyanto,&nbsp;S.Pd.,&nbsp;Gr.</h6>
+                            <h6 style="color:#444444;">Pengajar Matematika</h6>
+                        </div>
+                    </div>
+                </div>
+                <div class="swiper-slide grow-0 mt-2" role="group" aria-label="62 / 63" data-swiper-slide-index="61" style="width: 168.667px; margin-right: 10px;">
+                    <div class="flex flex-col bg-blue-100 rounded-md overflow-hidden h-[460px]">
+                        <div class="h-[80%]">
+                            <img class="h-full w-full object-cover object-top" src="../assets/images/mentor/4x2eabw-1717470052.jpg" alt="icon"><br>
+                        </div>
+                        <div class="h-[20%] grow-0 text-center p-2">
+                            <h6 class="text-xl font-bold mb-2 text-blue-400">Marwah Juwita Yusuf, S.S., M.Hum.,&nbsp;CPS.,&nbsp;CPPS.</h6>
+                            <h6 style="color:#444444;">Pengajar Bahasa Inggris</h6>
+                        </div>
+                    </div>
+                </div>
+                <div class="swiper-slide grow-0 mt-2" role="group" aria-label="63 / 63" data-swiper-slide-index="62" style="width: 168.667px; margin-right: 10px;">
+                    <div class="flex flex-col bg-blue-100 rounded-md overflow-hidden h-[460px]">
+                        <div class="h-[80%]">
+                            <img class="h-full w-full object-cover object-top" src="../assets/images/mentor/4xwfmsz-1717470034.jpg" alt="icon"><br>
+                        </div>
+                        <div class="h-[20%] grow-0 text-center p-2">
+                            <h6 class="text-xl font-bold mb-2 text-blue-400">Audi Aprilia, S.Psi</h6>
+                            <h6 style="color:#444444;">Pengajar Psikologi</h6>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="swiper-button-next"></div>
+            <div class="swiper-button-prev"></div>
+        </div>
+    </section>
+
+    <!-- SECTION 5 PAKET HARGA -->
+    <!-- SECTION 5 PAKET HARGA -->
+    <section id="Bimbel" class="max-w-[1320px] mx-auto px-2 py-8">
+        <div class="flex items-center justify-center flex-col text-center hdn">
+            <h4 class="lg:text-2xl text-xl font-bold text-blue-500">BIMBEL CPNS ONLINE</h4>
+            <h2 class="lg:text-4xl text-3xl font-bold mb-10 max-w-[700px]">Daftarkanlah Segera Diri Anda dan Jadilah CPNS</h2>
+        </div>
+        <div class="flex flex-col items-center justify-center">
+            <div class="lg:w-[33%] sm:w-[50%] w-[100%] shrink grow-0 px-2 mb-4 hdnBtm">
+                <div class="">
+                    <div class="mb-6 rounded-sm overflow-hidden">
+                        <img class="max-w-full" src="../assets/images/bimbel/bimble-img1.jpg" alt="">
+                    </div>
+                    <div class="rounded-sm overflow-hidden mb-8">
+                        <video controls loading="lazy" class="max-w-full" src="../assets/images/video-sect5.mp4" alt="">
+                    </div>
+                    <!-- <div class="py-4 px-4 text-sm">
+                        <div class="mb-1 opacity-65"><span class="text-xs pr-4 py-2"><i class="pr-2 far fa-user"></i>Pengajar</span><span class="text-xs pr-4 py-2"><i class="pr-2 far fa-calendar"></i>00-00-0000</span></div>
+                        <h2 class="text-lg font-bold mb-2">BIMBEL PAKET SKD & SKB CPNS MAHKAMAH AGUNG (Analis Perkara Peradilan)</h2>
+                        <p class="opacity-70 mb-5">
+                            Penguasaan terhadap tes SKD atau seleksi kompetensi dasar dapat dilakukan dengan mempelajari struktur dan format tes, pengaturan waktu yang tepat dalam menjawab soal, dan tips untuk mengerjakan soal agar lebih cepat dan tepat. Dalam kelas ini, kamu akan belajar mengenai tes wawasan kebangsaan, tes inteligensi umum, dan tes karakteristik pribadi dan Materi Calon PNS di Mahkamah Agung dengan Formasi Jabatan Analis Perkasa Peradilan. Kelas ini, juga dilengkapi dengan simulasi tes berupa latihan soal untuk mengevaluasi sejauh mana pengetahuan dan keterampilan yang sudah dipelajari. Selain itu, kamu akan mempelajari beberapa materi pengantar, teknik, dan strategi untuk menjawab soal dari masing-masing pembahasan. Dengan materi yang lebih terkini kamu diharapkan lebih siap dan percaya diri ketika menghadapi tes CAT SKD DAN SKB CPNS. Yuk, miliki kelasnya sekarang!
+                        </p>
+                        <div class="mb-2">
+                            <h5 class="opacity-70">DIANTARANYA :</h5>
+                            <h5 class="opacity-70">PERTEMUAN ZOOM 5X</h5>
+                            <h5 class="opacity-70">3X ZOOM SKD</h5>
+                            <h5 class="opacity-70">2X ZOOM SKB</h5>
+                            <h5 class="opacity-70">TRYOUT FREE 4X UNTUK SKD & SKB</h5>
+                            <h5 class="opacity-70">DAN MENDAPATKAN REKAMAN ULANG ZOOM UNTUK BELAJAR.</h5>
+                        </div>
+                        <div class="flex items-center">
+                            <a target="_blank" class=" bg-yellow-400 px-4 py-2"  href="https://wa.link/gr631f">Free</a>
+                        </div>
+                    </div> -->
+                </div>
+            </div>
+            <div class="max-w-[590px] mx-auto py-6 px-4 relative">
+                <div class="text-center font-bold mb-6">
+                    <h1 class="text-3xl">DAFTAR SEKARANG</h1>
+                    <h2 class="text-2xl mb-6">Khusus 10 pendaftar pertama hari ini akan mendapatkan <span class="text-red-500">DISKON 50%</span>. Mau?</h2>
+                    <span class="bg-blue-800 text-2xl text-white">Yuk Silahkan Langsung KLIK TOMBOL dibawah ini untuk daftar via WhatsApp</span>            
+                </div>
+                <div class="flex justify-center h-60 py-5">
+                    <div class="h-20 w-20 arrow-down-left-animate">
+                        <img class="-rotate-45 -scale-x-100" src="../assets/images/down-emoji.png" alt="">
+                    </div>
+                    <div class="h-20 w-20 lg:mx-20 mx-10 arrow-down-animate">
+                        <img class="rotate-0" src="../assets/images/down-emoji.png" alt="">
+                    </div>
+                    <div class="h-20 w-20 arrow-down-right-animate">
+                        <img class="rotate-45" src="../assets/images/down-emoji.png" alt="">
+                    </div>
+                </div>
+                <a href="https://wa.link/rwlpjb" class="relative">
+                    <!-- https://api.whatsapp.com/send?phone=+62811444060&text=Halo saya mau bertanya tentang Mulaikarir -->
+                    <img class="mx-auto " srcset=""  src="//gif.berduflare.com/gif/bsob0d3ebsogflg0sb_2/fp3W8xTMMthoLdRfpujZEYiUjY5ggQtWYNSmRjC82oQ.gif#dc=d8dcd7&amp;w=574&amp;h=161" draggable="false" alt="Daftar Sekarang">
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- SECTION 6 TESTIMONIAL -->
+    <!-- SECTION 6 TESTIMONIAL -->
+    <section id="Testimonial" class="max-w-[1320px] mx-auto px-4 py-8">
+        <div class="flex items-center justify-center flex-col text-center hdn">
+            <h4 class="lg:text-2xl text-xl font-bold text-blue-500">Testimonial</h4>
+            <h2 class="lg:text-4xl text-3xl font-bold mb-10">Apa kata mereka?</h2>
+        </div>
+        <div class="swiper2 overflow-hidden relative hdnBtm mb-6">
+            <!-- Additional required wrapper -->
+            <div class="swiper-wrapper h-fit pb-10" id="testimonial-container ">
+                <div class="swiper-slide bg-blue-300 p-5 h-full w-[266px]" role="group" aria-label="1 / 13" data-swiper-slide-index="0">
+                    <div class="flex items-center border-b pb-4 mb-4">
+                        <div class="flex items-center relative justify-center bg-blue-400 h-20 w-20 text-white text-4xl rounded-full overflow-hidden">
+                            <i class="fas fa-user absolute"></i>
+                            <img class="object-cover object-top absolute w-full h-full z-10" src="../assets/images/testimoni/banner/6.png" alt="">
+                        </div>
+                        <div class="pl-4 mb-4">
+                            <h3 class="text-xl font-semibold text-blue-600">Salman Alfarisi</h3>
+                        </div>
+                    </div>
+                    <div class="opacity-70">
+                        <p class="">Soal - soalnya Hampir Mirip dengan soal CPNS yang saya ikuti.</p>
+                    </div>
+                </div>
+                <div class="swiper-slide bg-blue-300 p-5 h-full w-[266px]" role="group" aria-label="4 / 13" data-swiper-slide-index="3">
+                    <div class="flex items-center border-b pb-4 mb-4">
+                        <div class="flex items-center relative justify-center bg-blue-400 h-20 w-20 text-white text-4xl rounded-full overflow-hidden">
+                            <i class="fas fa-user absolute"></i>
+                            <img class="object-cover object-top absolute w-full h-full z-10" src="../assets/images/testimoni/banner/2.png" alt="">
+                        </div>
+                        <div class="pl-4 mb-4">
+                            <h3 class="text-xl font-semibold text-blue-600">Andi Dedi Priyanto, S.H</h3>
+                        </div>
+                    </div>
+                    <div class="opacity-70">
+                        <p class="">Sistemnya bagus Memudahkan dalam Pembelajaran soal - soal.</p>
+                    </div>
+                </div>
+                <div class="swiper-slide bg-blue-300 p-5 h-full w-[266px]" role="group" aria-label="7 / 13" data-swiper-slide-index="6">
+                    <div class="flex items-center border-b pb-4 mb-4">
+                        <div class="flex items-center relative justify-center bg-blue-400 h-20 w-20 text-white text-4xl rounded-full overflow-hidden">
+                            <i class="fas fa-user absolute"></i>
+                            <img class="object-cover object-top absolute w-full h-full z-10" src="../assets/images/testimoni/banner/4.png" alt="">
+                        </div>
+                        <div class="pl-4 mb-4">
+                            <h3 class="text-xl font-semibold text-blue-600">Andi Azwad, S.H</h3>
+                        </div>
+                    </div>
+                    <div class="opacity-70">
+                        <p class="">Alhamdulillah, Saya LULUS MURNI CPNS Di Bimbingan Learning Centre</p>
+                    </div>
+                </div>
+                <div class="swiper-slide bg-blue-300 p-5 h-full w-[266px]" role="group" aria-label="5 / 13" data-swiper-slide-index="4">
+                    <div class="flex items-center border-b pb-4 mb-4">
+                        <div class="flex items-center relative justify-center bg-blue-400 h-20 w-20 text-white text-4xl rounded-full overflow-hidden">
+                            <i class="fas fa-user absolute"></i>
+                            <img class="object-cover object-top absolute w-full h-full z-10" src="../assets/images/testimoni/banner/3.png" alt="">
+                        </div>
+                        <div class="pl-4 mb-4">
+                            <h3 class="text-xl font-semibold text-blue-600">Andi Tenri Seling, S.H</h3>
+                        </div>
+                    </div>
+                    <div class="opacity-70">
+                        <p class="">Didukung oleh mentor - mentor yang sangat kompeten dibidangnya.</p>
+                    </div>
+                </div>
+                <div class="swiper-slide bg-blue-300 p-5 h-full w-[266px]" role="group" aria-label="3 / 13" data-swiper-slide-index="2">
+                    <div class="flex items-center border-b pb-4 mb-4">
+                        <div class="flex items-center relative justify-center bg-blue-400 h-20 w-20 text-white text-4xl rounded-full overflow-hidden">
+                            <i class="fas fa-user absolute"></i>
+                            <img class="object-cover object-top absolute w-full h-full z-10" src="../assets/images/testimoni/banner/5.png" alt="">
+                        </div>
+                        <div class="pl-4 mb-4">
+                            <h3 class="text-xl font-semibold text-blue-600">Andi Kartika Ramadhani,S.H.,M.H</h3>
+                        </div>
+                    </div>
+                    <div class="opacity-70">
+                        <p class="">Alhamdulillah, Berkat belajar banyak dari Bimbingan BLC dan
+                            penjelasan - penjelasan dari mentor nya, Saya LULUS CPNS di Kejaksaan Cabang
+                            Pelabuhan Makassar</p>
+                    </div>
+                </div>
+                <div class="swiper-slide bg-blue-300 p-5 h-full w-[266px]" role="group" aria-label="6 / 13" data-swiper-slide-index="5">
+                    <div class="flex items-center border-b pb-4 mb-4">
+                        <div class="flex items-center relative justify-center bg-blue-400 h-20 w-20 text-white text-4xl rounded-full overflow-hidden">
+                            <i class="fas fa-user absolute"></i>
+                            <img class="object-cover object-top absolute w-full h-full z-10" src="../assets/images/testimoni/banner/-1587521475.jpeg" alt="">
+                        </div>
+                        <div class="pl-4 mb-4">
+                            <h3 class="text-xl font-semibold text-blue-600">Haykal Pappang Bone</h3>
+                        </div>
+                    </div>
+                    <div class="opacity-70">
+                        <p class="">
+                            Puji Tuhan, sy bisa lulus masuk di IPDN berkat bergabung di BLC . Sy sangat puas dengan metode belajarnya serta soal nya yg akurat. Terimakasih BLC </p>
+                    </div>
+                </div>
+                <div class="swiper-slide bg-blue-300 p-5 h-full w-[266px]" role="group" aria-label="8 / 13" data-swiper-slide-index="7">
+                    <div class="flex items-center border-b pb-4 mb-4">
+                        <div class="flex items-center relative justify-center bg-blue-400 h-20 w-20 text-white text-4xl rounded-full overflow-hidden">
+                            <i class="fas fa-user absolute"></i>
+                            <img class="object-cover object-top absolute w-full h-full z-10" src="../assets/images/testimoni/banner/-1587521672.jpeg" alt="">
+                        </div>
+                        <div class="pl-4 mb-4">
+                            <h3 class="text-xl font-semibold text-blue-600">Nafi Atul Mufi Ikah</h3>
+                        </div>
+                    </div>
+                    <div class="opacity-70">
+                        <p class="">
+                            Alhamdulillah, terimakasih BLC dan seluruh tentornya yg berpengalaman. Akhirnya sy bisa lulus masuk ke IPDN tahun 2019 berkat BLC. </p>
+                    </div>
+                </div>
+                <div class="swiper-slide bg-blue-300 p-5 h-full w-[266px]" role="group" aria-label="9 / 13" data-swiper-slide-index="8">
+                    <div class="flex items-center border-b pb-4 mb-4">
+                        <div class="flex items-center relative justify-center bg-blue-400 h-20 w-20 text-white text-4xl rounded-full overflow-hidden">
+                            <i class="fas fa-user absolute"></i>
+                            <img class="object-cover object-top absolute w-full h-full z-10" src="../assets/images/testimoni/banner/-1588048761.png" alt="">
+                        </div>
+                        <div class="pl-4 mb-4">
+                            <h3 class="text-xl font-semibold text-blue-600">Abdul Handayana</h3>
+                        </div>
+                    </div>
+                    <div class="opacity-70">
+                        <p class="">
+                            Berkat mengikuti bimbingan belajar di Bintaro Learning Center, sy bisa lulus masuk STAN . Saya sangat senang krn STAN adalah kampus impian saya </p>
+                    </div>
+                </div>
+                <div class="swiper-slide bg-blue-300 p-5 h-full w-[266px]" role="group" aria-label="10 / 13" data-swiper-slide-index="9">
+                    <div class="flex items-center border-b pb-4 mb-4">
+                        <div class="flex items-center relative justify-center bg-blue-400 h-20 w-20 text-white text-4xl rounded-full overflow-hidden">
+                            <i class="fas fa-user absolute"></i>
+                            <img class="object-cover object-top absolute w-full h-full z-10" src="../assets/images/testimoni/banner/-1588048839.png" alt="">
+                        </div>
+                        <div class="pl-4 mb-4">
+                            <h3 class="text-xl font-semibold text-blue-600">Ahlan</h3>
+                        </div>
+                    </div>
+                    <div class="opacity-70">
+                        <p class="">
+                            Alhamdulillah krn bergabung di BLC, saya bisa lulus masuk STAN . Belajar di BLC sangat praktis dan nyaman. </p>
+                    </div>
+                </div>
+                <div class="swiper-slide bg-blue-300 p-5 h-full w-[266px]" role="group" aria-label="11 / 13" data-swiper-slide-index="10">
+                    <div class="flex items-center border-b pb-4 mb-4">
+                        <div class="flex items-center relative justify-center bg-blue-400 h-20 w-20 text-white text-4xl rounded-full overflow-hidden">
+                            <i class="fas fa-user absolute"></i>
+                            <img class="object-cover object-top absolute w-full h-full z-10" src="../assets/images/testimoni/banner/-1588048910.png" alt="">
+                        </div>
+                        <div class="pl-4 mb-4">
+                            <h3 class="text-xl font-semibold text-blue-600">Agung Hayatullah</h3>
+                        </div>
+                    </div>
+                    <div class="opacity-70">
+                        <p class="">
+                            Sy lulus masuk STAN karena bimbel di BLC . Metode belajarnya sangat mudah dipahami. BLC memang keren! </p>
+                    </div>
+                </div>
+                <div class="swiper-slide bg-blue-300 p-5 h-full w-[266px]" role="group" aria-label="12 / 13" data-swiper-slide-index="11">
+                    <div class="flex items-center border-b pb-4 mb-4">
+                        <div class="flex items-center relative justify-center bg-blue-400 h-20 w-20 text-white text-4xl rounded-full overflow-hidden">
+                            <i class="fas fa-user absolute"></i>
+                            <img class="object-cover object-top absolute w-full h-full z-10" src="../assets/images/testimoni/banner/-1588048987.png" alt="">
+                        </div>
+                        <div class="pl-4 mb-4">
+                            <h3 class="text-xl font-semibold text-blue-600">Nadila Sri Fahmi</h3>
+                        </div>
+                    </div>
+                    <div class="opacity-70">
+                        <p class="">
+                            STAN merupakan kampus impian saya dari dulu, Alhamdulillah karena sy bimbel di BLC saya bisa lulus masuk STAN </p>
+                    </div>
+                </div>
+                <div class="swiper-slide bg-blue-300 p-5 h-full w-[266px]" role="group" aria-label="13 / 13" data-swiper-slide-index="12">
+                    <div class="flex items-center border-b pb-4 mb-4">
+                        <div class="flex items-center relative justify-center bg-blue-400 h-20 w-20 text-white text-4xl rounded-full overflow-hidden">
+                            <i class="fas fa-user absolute"></i>
+                            <img class="object-cover object-top absolute w-full h-full z-10" src="../assets/images/testimoni/banner/-1588049094.png" alt="">
+                        </div>
+                        <div class="pl-4 mb-4">
+                            <h3 class="text-xl font-semibold text-blue-600">Richardi</h3>
+                        </div>
+                    </div>
+                    <div class="opacity-70">
+                        <p class="">
+                            Puji Tuhan berkat bimbel di BLC sy bisa lulus di kedok UGM . Tentornya sangat profesional dalam mengajar loh </p>
+                    </div>
+                </div>
+            </div>
+            <div class="swiper-pagination"></div>
+            <!-- If we need navigation buttons -->
+        </div>
+        <div class="rounded-sm overflow-hidden mb-8 lg:w-[30%] sm:w-[40%] w-[80%] mx-auto">
+            <video controls loading="lazy"  preload="metadata" class="max-w-full" src="../assets/images/testimoni/video/SOFIANA CPNS.mp4" alt="">
+        </div>
+        <div class="rounded-sm overflow-hidden mb-8 lg:w-[30%] sm:w-[40%] w-[80%] mx-auto">
+            <video controls loading="lazy" preload="metadata" class="max-w-full" src="../assets/images/testimoni/video/YUKI CPNS.mp4" alt="">
+        </div>
+    </section>
+
+    <!-- SECTION 7 CONTACT -->
+    <section class="max-w-[1320px] mx-auto px-4 py-8">
+        <div class="flex md:flex-row flex-col items-center ">
+            <div class="flex-[59%] lg:pr-4">
+                <h4 class="mb-4 lg:text-2xl text-xl font-bold hdnBtm">AJUKAN PERTANYAAN</h4>
+                <h2 class="mb-12 lg:text-4xl text-3xl font-bold hdnBtm">Ada pertanyaan? Silahkan ajukan pertanyaan ke kami.</h2>
+                <h4 class="text-xl font-bold mb-4 hdnBtm">Layanan 24 Jam</h4>
+                <p class="mb-4 hdnBtm">Butuh bantuan atau informasi lebih lanjut? Kami siap membantu! Jangan ragu untuk mengajukan pertanyaan Anda. Tim kami tersedia 24 jam untuk memberikan layanan terbaik. Kami mengutamakan kenyamanan Anda. Silakan hubungi kami melalui layanan WhatsApp atau gunakan formulir di bawah ini. Terima kasih!</p>
+                <div class="flex mb-8 hdn">
+                    <div class="flex items-center justify-center bg-blue-400 h-20 w-20 text-white text-4xl">
+                        <i class="fab fa-whatsapp"></i>
+                    </div>
+                    <div class="pl-4">
+                        <h3 class="lg:text-xl md:text-lg text-base font-semibold mb-4">Konsultasi Melalui Admin</h3>
+                        <!-- <h3 class="lg:text-3xl text-xl font-semibold text-blue-400">+6285299655699</h3> -->
+                        <a target="_blank" class="text-hover md:px-12 px-6 md:py-3 py-2 bg-blue-400 text-white hdn" href="https://wa.link/zljwni">Tanya Admin</a>
+                    </div>
+                </div>
+            </div>
+            <div class="flex-[41%]">
+                <form class="bg-blue-400 py-12 px-8 hdn">
+                    <input class="block w-full mb-2 py-3 px-3" name="nama" id="nama" placeholder="Nama Anda" type="text">
+                    <input class="block w-full mb-2 py-3 px-3" name="email" id="email" placeholder="Alamat Email Anda" type="text">
+                    <textarea class="block w-full mb-2 py-3 px-2" name="pesan" id="pesan" rows="3" placeholder="Pesan"></textarea>
+                    <button class="w-full h-full py-3 px-2 bg-blue-700 text-white" onclick="sendToWhatsapp()">Ajukan Pertanyaan</button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <section class="w-full py-6 bg-blue-950 ">
+        <h5 class="text-center text-white text-lg">NektarClass By Bintaro Learning Center</h5>
+        <h5 class="text-center text-white text-lg">Jl. A.P. Pettarani 2i No.8 Kota Makassar</h5>
+    </section>
+</body>
+<script>
+    // Contact Session
+    // Form To Whatsapp
+    function sendToWhatsapp() {
+        let number = "+6287752874441";
+        let name = document.getElementById('nama').value;
+        let email = document.getElementById('email').value;
+        let message = document.getElementById('pesan').value;
+
+        var url = "https://wa.me/" + number + "?text="
+        + "Salam%20kak%20saya%20ingin%20mengajukan%20pertanyaan%20mengenai%20Bintaro%20Learning%20Center%0A"
+        + "Nama : " + name + "%0a" 
+        + "Email : " + email  + "%0a"
+        + "Pertanyaan : " + message;
+        window.open(url, '_blank').focus();
+
+    }
+</script>
+<script src="../script.js"></script>
+
+</html>
+
+<!-- Swiper === -->
+    <!-- <div id="Home" class="swiper">
+        <div class="swiper-wrapper h-fit">
+            <div class="swiper-slide">
+                <img class="w-full object-cover object-center" src="https://testasn.com/assets-compro/img/banner/banner-3.png" alt="">
+            </div>
+            <div class="swiper-slide">
+                <img class="w-full object-cover object-center" src="https://testasn.com/assets-compro/img/banner/banner-9.png" alt="">
+            </div>
+            <div class="swiper-slide">
+                <img class="w-full object-cover object-center" src="https://testasn.com/assets-compro/img/banner/banner-7.png" alt="">
+            </div>
+        </div>
+        <div class="swiper-button-prev text-white ml-3 lg:inline hidden"></div>
+        <div class="swiper-button-next text-white mr-3 lg:inline hidden"></div>
+    </div> -->
