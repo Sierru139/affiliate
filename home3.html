@@ -4,7 +4,6 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <script src="https://cdn.tailwindcss.com"></script>
-    <title>BLC Kreasi Nektar</title>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -14,6 +13,7 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Readex+Pro:wght@160..700&display=swap" rel="stylesheet">
     <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+    <title>BLC Kreasi Nektar</title>
 </head>
 <body class="bg-[#ffe01b] p-6">
     
@@ -70,22 +70,117 @@
         <h2 class="mb-4 text-2xl font-bold">🤑 Para member kursus kami sudah cuan dari Program Affiliate yang kami sediakan! <br><br> (Tanpa nunjukin muka!)</h2>
         <img class="rounded-xl border border-black mb-4" src="https://mudacuanacademy.com/wp-content/uploads/2024/06/affiliate-11-juta-1024x477.png" alt="">
         <div class="text-left">
-            <p class="mb-4">Dan enaknya lagi.. komisi mereka ditransfer SEMINGGU SEKALI!</p>
-            <p class="mb-4">Ketika kamu join kelas online ini, kamu otomatis terdaftar jadi affiliate juga seperti mereka.</p>
-            <p class="mb-4">Bisa langsung hasilin cuan dari bulan pertama.</p>
-            <p class="mb-4">Bahkan hari pertama!</p>
-            <p class="mb-4 font-semibold">Beberapa keuntungan program Affiliate kami:</p>
+            <p class="mb-4 opacity-85">Dan enaknya lagi.. komisi mereka ditransfer SEMINGGU SEKALI!</p>
+            <p class="mb-4 opacity-85">Ketika kamu join kelas online ini, kamu otomatis terdaftar jadi affiliate juga seperti mereka.</p>
+            <p class="mb-4 opacity-85">Bisa langsung hasilin cuan dari bulan pertama.</p>
+            <p class="mb-4 opacity-85">Bahkan hari pertama!</p>
+            <p class="mb-4 opacity-85 font-semibold">Beberapa keuntungan program Affiliate kami:</p>
             <ul class="list-disc pl-8 mb-4">
                 <li>Komisinya BESAR, sampai 50%!</li>
                 <li>Ditransfer setiap hari senin, bisa ke rekening bank maupun e-wallet (Dana/OVO/dll).</li>
                 <li>Sudah disediakan landing page (link tinggal share aja).</li>
             </ul>
-            <p class="mb-4 font-semibold">Dan yang TERPENTING</p>
-            <p class="mb-4 font-semibold"><span class="font-semibold">🤑 Kamu juga diajarin cara jualannya,</span> meskipun kamu baru mulai & followers IG-mu masih sedikit!</p>
-            <p class="mb-4">Bahkan hari pertama!</p>
+            <p class="mb-4 opacity-85">Dan yang TERPENTING..</p>
+            <p class="mb-4 opacity-85 "><span class="font-semibold">🤑 Kamu juga diajarin cara jualannya,</span> meskipun kamu baru mulai & followers IG-mu masih sedikit!</p>
+            <p class="mb-4 opacity-85">Tertarik?</p>
+            <p class="mb-4 opacity-85 font-semibold">Intip screenshot komisi para member kami:</p>
+            <p class="mb-4 opacity-85">Geser & klik gambarnya untuk memperbesar ⇣</p>
         </div>
 
+        <div class="swiperscr overflow-hidden hdnBtm mb-6">
+            <!-- Additional required wrapper -->
+            <div class="swiper-wrapper h-fit pb-10" id="testimonial-container ">
+                <div class="swiper-slide h-full rounded-lg">
+                    <div class="flex items-center overflow-hidden border-b rounded-lg">
+                        <img class="img-swiper cursor-pointer" src="https://mudacuanacademy.com/wp-content/uploads/2024/06/Komisi-IGMH-Up-13-Jun-20-768x1662.webp" alt="">
+                    </div>
+                </div>
+                <div class="swiper-slide h-full rounded-lg">
+                    <div class="flex items-center overflow-hidden border-b rounded-lg">
+                        <img class="img-swiper cursor-pointer" src="https://mudacuanacademy.com/wp-content/uploads/2024/06/Komisi-IGMH-Up-13-Jun-19-768x1662.webp" alt="">
+                    </div>
+                </div>
+                <div class="swiper-slide h-full rounded-lg">
+                    <div class="flex items-center overflow-hidden border-b rounded-lg">
+                        <img class="img-swiper cursor-pointer" src="https://mudacuanacademy.com/wp-content/uploads/2024/06/Komisi-IGMH-Up-13-Jun-14-768x1662.webp" alt="">
+                    </div>
+                </div>
+                <div class="swiper-slide h-full rounded-lg">
+                    <div class="flex items-center overflow-hidden border-b rounded-lg">
+                        <img class="img-swiper cursor-pointer " src="https://mudacuanacademy.com/wp-content/uploads/2024/06/Komisi-IGMH-Up-13-Jun-8-scaled.webp" alt="">
+                    </div>
+                </div>
+            </div>
+            <div class="swiper-pagination z-30"></div>
+
+            <div class="image-pop py-8">
+                <img class="pop-image w-72" src="" alt="">
+                <span class="close-pop absolute right-5 top-5 cursor-pointer text-white font-bold">X</span>
+            </div>
+            <!-- If we need navigation buttons -->
+        </div>
     </section>
     
+    <style>
+        .image-pop {
+            display: none;
+            position: fixed;
+            background-color: rgba(0, 0, 0, 0.4);
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            z-index: 99;
+            justify-content: center;
+            align-items: center;
+            opacity: 0;
+            transition: opacity .4s ease;
+        }
+    </style>
+    <script>
+
+        const swiper = new Swiper('.swiperscr', {
+        // Optional parameters
+        direction: 'horizontal',
+        loop: true,
+        slidesPerView: 2,
+        spaceBetween: 3,
+        pagination: {
+            el: '.swiper-pagination',
+            // dynamicBullets: true,
+            clickable: true,
+        }
+    });
+    
+    const imgSwiper = document.querySelectorAll('.img-swiper');
+    imgSwiper.forEach((swiper, index) => {
+        swiper.addEventListener('click',  function(){
+            const imgPop = document.querySelectorAll('.image-pop');
+            const currentPop = imgPop[index];
+            
+            const imgSrc = swiper.getAttribute('src');
+            const popImg = currentPop.querySelector(".pop-image");
+            popImg.setAttribute('src', imgSrc);
+            if (currentPop.style.display === 'flex') {
+                currentPop.style.opacity = 0;
+                setTimeout(() => {
+                    currentPop.style.display = 'none';
+                }, 400);
+            } else {
+                currentPop.style.display = 'flex';
+                setTimeout(() => {
+                    currentPop.style.opacity = 1;
+                }, 10);
+            }
+            const closePop = currentPop.querySelector('.close-pop');
+            closePop.addEventListener('click', function(){
+                currentPop.style.opacity = 0;
+                setTimeout(() => {
+                    currentPop.style.display = 'none';
+                }, 400);
+            });
+        });
+    });
+    </script>
 </body>
 </html>

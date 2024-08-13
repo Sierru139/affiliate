@@ -161,22 +161,7 @@ function addTestimonialsToContainer(testimonials) {
     hiddenTopElements.forEach((el) => observerDown.observe(el));
     
 
-    // Contact Session
-    // Form To Whatsapp
-    function sendToWhatsapp() {
-        let number = "+6287846421796";
-        let name = document.getElementById('nama').value;
-        let email = document.getElementById('email').value;
-        let message = document.getElementById('pesan').value;
-
-        var url = "https://wa.me/" + number + "?text="
-        + "Salam%20kak%20saya%20ingin%20mengajukan%20pertanyaan%20mengenai%20Bintaro%20Learning%20Center%0A"
-        + "Nama : " + name + "%0a" 
-        + "Email : " + email  + "%0a"
-        + "Pertanyaan : " + message;
-        window.open(url, '_blank').focus();
-
-    }
+    
 
 // // Quotes
 // document.addEventListener("DOMContentLoaded", function() {
