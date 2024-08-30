@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <title>BLC Kreasi Nektar</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Readex+Pro:wght@160..700&display=swap" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+</head>
+    <style>
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: "Readex Pro", sans-serif;
+        }
+
+        .goDown {
+            animation: navDown .5s ease;
+        }
+
+        @keyframes navDown {
+            0% {
+                transform: translateY(-100%);
+                opacity: 0;
+            }
+
+            100% {
+                transform: translateY(0);
+                opacity: 1;
+            }
+        }
+
+        .resGoDown {
+            animation: navRespoDown .3s linear;
+        }
+
+        @keyframes navRespoDown {
+            0% {
+                transform: translateX(100%);
+                opacity: 0;
+            }
+
+            100% {
+                transform: translateX(0);
+                opacity: 1;
+            }
+        }
+        
+        .hdn {
+            scale: .2;
+            opacity: 0;
+            transform: translateY(40%);
+            transition: all .8s;
+        }
+
+        .hdnBtm {
+            opacity: 0;
+            transform: translateY(40%);
+            transition: all .8s;
+        }
+
+        .hdnTop {
+            opacity: 0;
+            transform: translateY(-40%);
+            transition: all .7s;
+        }
+
+        .show {
+            scale: 1;
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .quotes span {
+            display: inline-block;
+            opacity: 0;
+            transform: translateY(-10px);
+            animation: fadeInUp .5s forwards;
+        }
+
+        @keyframes fadeInUp {
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .nav-close {
+            animation: nav-close .7s ease;
+        }
+
+        @keyframes nav-close {
+            0% {
+                transform: translateX(0);
+                opacity: 1;
+            }
+            100% {
+                transform: translateX(100%);
+                opacity: 0;
+            }
+        }
+
+        .answer {
+            max-height: 0;
+            overflow: hidden;
+            transition: .6s ease-in-out;
+        }
+        .show {
+            max-height: 200px;
+        }
+
+        .arrow-rotate {
+            rotate: -90deg;
+            transition: .4s ease-in-out;
+        }
+
+        .arrow-rotated {
+            rotate: 0deg;
+        }
+
+        .paket-list {
+            list-style-image: url('./assets/images/green-check.png');
+        }
+
+        .btn-bg {
+            transition: .2s;
+            &:hover {
+                background: rgb(59,52,192);
+                background: linear-gradient(120deg, rgba(59,52,192,1) 0%, rgba(113,197,240,1) 100%);
+                color: white;
+            }
+        }
+        .btn-bg-click {
+            color: white;
+            background: rgb(59,52,192);
+            background: linear-gradient(120deg, rgba(59,52,192,1) 0%, rgba(113,197,240,1) 100%);
+        }
+
+        /* COLOR 00a4e8 */
+        /* COLOR 015998 */
+
+        /* FINGER ANIMATE */
+        .arrow-down-animate {
+            animation: arrowDown 1s ease-in-out infinite;
+        }
+        .arrow-down-left-animate {
+            animation: arrowDownLeft 1s ease-in-out infinite;
+        }
+        .arrow-down-right-animate {
+            animation: arrowDownRight 1s ease-in-out infinite;
+        }
+        @keyframes arrowDown {
+            0% {
+                transform: translateY(0%);
+            }
+            50% {
+                transform: translateY(100%);
+            }
+        }
+        @keyframes arrowDownLeft {
+            0% {
+                transform: translate(0%, 0%);
+            }
+            50% {
+                transform: translate(30%, 100%);
+            }
+        }
+        @keyframes arrowDownRight {
+            0% {
+                transform: translate(0%, 0%);
+            }
+            50% {
+                transform: translate(-30%, 100%);
+            }
+        }
+
+        .barrier {
+            background-image: url('download.svg');
+            background-repeat: repeat-x;
+            
+        }
+
+        .animate-finger {
+            animation: moveDown 1s ease infinite;
+        }
+
+        @keyframes moveDown {
+            0% {
+                transform: translateY(0);
+            }
+            50% {
+                transform: translateY(2rem);
+            }
+        }
+    </style>
+<body class="p-4">
+    
+    <section class="max-w-[690px] mx-auto shadow-lg rounded-2xl text-center lg:px-28 md:px-20 px-4 py-6">
+        <h1 class="md:text-3xl sm:text-2xl text-xl font-bold mb-12">Hadiah spesial buat kamu yg mau ikut seleksi CPNS 2024 Gratis. mau?</h1>
+        <div class="text-left">
+            <h3 class="font-bold lg:text-2xl text-base flex items-center mb-6">
+                <span class="w-fit mr-2">Berikut Hadiahnya:</span>
+                <span class="flex-grow h-0.5 bg-[#dbdfe5]"></span>
+            </h3>
+            <div class="flex lg:flex-row flex-col mb-8 ">
+                <div class="flex-1 md:text-base text-sm">
+                    <h4 class=" mb-2 flex"><i class="fas fas fa-check mr-2 mt-1 text-blue-500"></i><span>Gratis akses ke group info seputar cpns 2024</span></h4>
+                    <h4 class=" mb-2 flex"><i class="fas fas fa-check mr-2 mt-1 text-blue-500"></i><span>Gratis akses live zoom belajar persiapan menghadapai seleksi CPNS 2024</span></h4>
+                    <h4 class=" mb-2 flex"><i class="fas fas fa-check mr-2 mt-1 text-blue-500"></i><span>Gratis akses EBOOK latihan soal & pembahasan CPNS senilai 300+ halaman</span></h4>
+                </div>
+            </div>
+            <img src="./assets/images/book/1724729994544-1724712936.webp" alt="">
+        </div>
+        <div class="max-w-[590px] mx-auto py-6 px-4 relative">
+            <div class="text-center font-bold mb-6">
+                <h4 class="font-semibold">Silahkan klik <u>TOMBOL</u> dibawah ini untuk masuk ke Group Whatsapp untuk mendapatkan hadiahnya secara gratisss</h4>
+            </div>
+            <div class="flex justify-center h-60 py-5 md:mb-6">
+                <div class="h-20 w-20 arrow-down-left-animate">
+                    <img class="-rotate-45 -scale-x-100" src="./assets/images/down-emoji.png" alt="">
+                </div>
+                <div class="h-20 w-20 lg:mx-20 mx-10 arrow-down-animate">
+                    <img class="rotate-0" src="./assets/images/down-emoji.png" alt="">
+                </div>
+                <div class="h-20 w-20 arrow-down-right-animate">
+                    <img class="rotate-45" src="./assets/images/down-emoji.png" alt="">
+                </div>
+            </div>
+            <a href="https://chat.whatsapp.com/LUY8K2YsmUCA5XCBkyj6od" class="relative md:py-4 py-4 md:px-8 px-8 text-white font-semibold bg-[#00a344] block sm:text-base text-sm">
+                <i class="fas fa-angle-double-right"></i>
+                Klik Disini Untuk Masuk Group WA
+                <!-- https://api.whatsapp.com/send?phone=+62811444060&text=Halo saya mau bertanya tentang Mulaikarir -->
+                <!-- <img class="mx-auto " srcset=""  src="//gif.berduflare.com/gif/bsob0d3ebsogflg0sb_2/fp3W8xTMMthoLdRfpujZEYiUjY5ggQtWYNSmRjC82oQ.gif#dc=d8dcd7&amp;w=574&amp;h=161" draggable="false" alt="Daftar Sekarang"> -->
+            </a>
+            <div class="text-center mt-6">
+                <u>Buruan join sebelum Groupnya Full</u>
+            </div>
+        </div>
+    </section>
+
+</body>
+</html>
