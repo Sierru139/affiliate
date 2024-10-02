@@ -87,25 +87,25 @@
             <p class="mb-4 opacity-85">Geser & klik gambarnya untuk memperbesar ⇣</p>
         </div>
 
-        <div class="swiperscr overflow-hidden hdnBtm mb-6">
+        <div class=" overflow-hidden hdnBtm mb-6">
             <!-- Additional required wrapper -->
-            <div class="swiper-wrapper h-fit pb-10" id="testimonial-container ">
-                <div class="swiper-slide h-full rounded-lg">
+            <div class=" pb-10" id="testimonial-container ">
+                <div class="h-full rounded-lg">
                     <div class="flex items-center overflow-hidden border-b rounded-lg">
                         <img class="img-swiper cursor-pointer" src="https://mudacuanacademy.com/wp-content/uploads/2024/06/Komisi-IGMH-Up-13-Jun-20-768x1662.webp" alt="">
                     </div>
                 </div>
-                <div class="swiper-slide h-full rounded-lg">
+                <div class="h-full rounded-lg">
                     <div class="flex items-center overflow-hidden border-b rounded-lg">
                         <img class="img-swiper cursor-pointer" src="https://mudacuanacademy.com/wp-content/uploads/2024/06/Komisi-IGMH-Up-13-Jun-19-768x1662.webp" alt="">
                     </div>
                 </div>
-                <div class="swiper-slide h-full rounded-lg">
+                <div class="h-full rounded-lg">
                     <div class="flex items-center overflow-hidden border-b rounded-lg">
                         <img class="img-swiper cursor-pointer" src="https://mudacuanacademy.com/wp-content/uploads/2024/06/Komisi-IGMH-Up-13-Jun-14-768x1662.webp" alt="">
                     </div>
                 </div>
-                <div class="swiper-slide h-full rounded-lg">
+                <div class="h-full rounded-lg">
                     <div class="flex items-center overflow-hidden border-b rounded-lg">
                         <img class="img-swiper cursor-pointer " src="https://mudacuanacademy.com/wp-content/uploads/2024/06/Komisi-IGMH-Up-13-Jun-8-scaled.webp" alt="">
                     </div>
@@ -117,7 +117,6 @@
                 <img class="pop-image w-72" src="" alt="">
                 <span class="close-pop absolute right-5 top-5 cursor-pointer text-white font-bold">X</span>
             </div>
-            <!-- If we need navigation buttons -->
         </div>
     </section>
     
@@ -139,48 +138,53 @@
     </style>
     <script>
 
-        const swiper = new Swiper('.swiperscr', {
-        // Optional parameters
-        direction: 'horizontal',
-        loop: true,
-        slidesPerView: 2,
-        spaceBetween: 3,
-        pagination: {
-            el: '.swiper-pagination',
-            // dynamicBullets: true,
-            clickable: true,
-        }
-    });
+        // var swiper = new Swiper('.swiperscr', {
+        // // Optional parameters
+        // direction: 'horizontal',
+        // loop: true,
+        // slidesPerView: 2,
+        // spaceBetween: 3,
+        // pagination: {
+        //     el: '.swiper-pagination',
+        //     // dynamicBullets: true,
+        //     clickable: true
+        // }
+        // });
     
-    const imgSwiper = document.querySelectorAll('.img-swiper');
-    imgSwiper.forEach((swiper, index) => {
-        swiper.addEventListener('click',  function(){
-            const imgPop = document.querySelectorAll('.image-pop');
-            const currentPop = imgPop[index];
-            
-            const imgSrc = swiper.getAttribute('src');
-            const popImg = currentPop.querySelector(".pop-image");
-            popImg.setAttribute('src', imgSrc);
-            if (currentPop.style.display === 'flex') {
-                currentPop.style.opacity = 0;
-                setTimeout(() => {
-                    currentPop.style.display = 'none';
-                }, 400);
-            } else {
-                currentPop.style.display = 'flex';
-                setTimeout(() => {
-                    currentPop.style.opacity = 1;
-                }, 10);
-            }
-            const closePop = currentPop.querySelector('.close-pop');
-            closePop.addEventListener('click', function(){
-                currentPop.style.opacity = 0;
-                setTimeout(() => {
-                    currentPop.style.display = 'none';
-                }, 400);
-            });
+        var imgSwiper = document.querySelectorAll('.img-swiper');
+imgSwiper.forEach((swiper) => {
+    swiper.addEventListener('click', function() {
+        var imgPop = document.querySelector('.image-pop'); // Pilih hanya satu popup
+        var imgSrc = swiper.getAttribute('src');
+        var popImg = imgPop.querySelector('.pop-image');
+
+        // Setel sumber gambar dari pop-up
+        popImg.setAttribute('src', imgSrc);
+
+        // Tampilkan atau sembunyikan pop-up berdasarkan status saat ini
+        if (imgPop.style.display === 'flex') {
+            imgPop.style.opacity = 0;
+            setTimeout(() => {
+                imgPop.style.display = 'none';
+            }, 400);
+        } else {
+            imgPop.style.display = 'flex';
+            setTimeout(() => {
+                imgPop.style.opacity = 1;
+            }, 10);
+        }
+
+        // Tambahkan event listener untuk tombol close
+        var closePop = imgPop.querySelector('.close-pop');
+        closePop.addEventListener('click', function() {
+            imgPop.style.opacity = 0;
+            setTimeout(() => {
+                imgPop.style.display = 'none';
+            }, 400);
         });
     });
+});
+
     </script>
 </body>
 </html>

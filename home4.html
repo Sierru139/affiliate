@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <title>BLC Kreasi Nektar</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,200..1000;1,200..1000&display=swap" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+    <style>
+        html {
+            scroll-behavior: smooth;
+        }
+
+        /* body {
+            font-family: "nunito", sans-serif;
+        } */
+
+        .text-hover {
+            transition: .8s;
+        }
+
+        .text-hover:hover {
+            box-shadow: inset 300px 0px 0px rgb(77, 135, 206);
+        }
+
+        .goDown {
+            animation: navDown .5s ease;
+        }
+
+        @keyframes navDown {
+            0% {
+                transform: translateY(-100%);
+                opacity: 0;
+            }
+
+            100% {
+                transform: translateY(0);
+                opacity: 1;
+            }
+        }
+
+        .resGoDown {
+            animation: navRespoDown .3s linear;
+        }
+
+        @keyframes navRespoDown {
+            0% {
+                transform: translateX(100%);
+                opacity: 0;
+            }
+
+            100% {
+                transform: translateX(0);
+                opacity: 1;
+            }
+        }
+        
+        .hdn {
+            scale: .2;
+            opacity: 0;
+            transform: translateY(40%);
+            transition: all .8s;
+        }
+
+        .hdnBtm {
+            opacity: 0;
+            transform: translateY(40%);
+            transition: all .8s;
+        }
+
+        .hdnTop {
+            opacity: 0;
+            transform: translateY(-40%);
+            transition: all .7s;
+        }
+
+        .show {
+            scale: 1;
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .quotes span {
+            display: inline-block;
+            opacity: 0;
+            transform: translateY(-10px);
+            animation: fadeInUp .5s forwards;
+        }
+
+        @keyframes fadeInUp {
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .nav-close {
+            animation: nav-close .7s ease;
+        }
+
+        @keyframes nav-close {
+            0% {
+                transform: translateX(0);
+                opacity: 1;
+            }
+            100% {
+                transform: translateX(100%);
+                opacity: 0;
+            }
+        }
+
+        /* FINGER ANIMATE */
+        .arrow-down-animate {
+            animation: arrowDown 1s ease-in-out infinite;
+        }
+        .arrow-down-left-animate {
+            animation: arrowDownLeft 1s ease-in-out infinite;
+        }
+        .arrow-down-right-animate {
+            animation: arrowDownRight 1s ease-in-out infinite;
+        }
+        @keyframes arrowDown {
+            0% {
+                transform: translateY(0%);
+            }
+            50% {
+                transform: translateY(100%);
+            }
+        }
+        @keyframes arrowDownLeft {
+            0% {
+                transform: translate(0%, 0%);
+            }
+            50% {
+                transform: translate(30%, 100%);
+            }
+        }
+        @keyframes arrowDownRight {
+            0% {
+                transform: translate(0%, 0%);
+            }
+            50% {
+                transform: translate(-30%, 100%);
+            }
+        }
+
+        .barrier {
+            background-image: url('download.svg');
+            background-repeat: repeat-x;
+            
+        }
+
+        .animate-finger {
+            animation: moveDown 1s ease infinite;
+        }
+
+        @keyframes moveDown {
+            0% {
+                transform: translateY(0);
+            }
+            50% {
+                transform: translateY(2rem);
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="bg-[#419e9e] p-8 lg:h-screen h-fit items-center justify-center flex">
+        <div class="text-center max-w-[1200px] mx-auto text-white lg:text-3xl text-xl font-bold">
+            <h1 class="">Mau Bisa Umroh & Haji Berkali-kali?</h1>
+            <h1 class="">Jadi Agen Umroh Aja</h1>
+            <div class="lg:mt-14 mt-10">
+                <h1 class="text-[#f7ff00]">IKUTI</h1>
+                <h1 class="text-[#f7ff00]">WEBINAR GRATIS</h1>
+                <h1 class="text-[#f7ff00] mt-5 lg:text-4xl text-2xl">UMROH MUDAH BONUS GAJIAN TIAP BULAN</h1>
+            </div>
+            <h1 class="lg:mt-14 mt-10">Cocok untuk Anda yang ingin mendapatkan income tambahan sebagai Agent Umroh dan Ingin memiliki BISNIS Umroh sendiri</h1>
+            <img class="mx-auto lg:mt-10 mt-6" src="./assets/images/registernow.png" alt="">
+        </div>
+    </div>
+
+    <div class="flex lg:flex-row flex-col ">
+        <div class="flex-1">
+            <img class="w-full" src="./assets/images/umrah-people.png" alt="">
+        </div>
+        <div class="flex-1"></div>
+    </div>
+
+    <!-- FOOTER -->
+    <section class="w-full py-6 bg-blue-950 ">
+        <h5 class="text-center text-white text-lg">NektarClass By Bintaro Learning Center</h5>
+        <h5 class="text-center text-white text-lg">Jl. A.P. Pettarani 2i No.8 Kota Makassar</h5>
+    </section>
+</body>
+
+<script>
+    // Contact Session
+    // Form To Whatsapp
+    function sendToWhatsapp() {
+        let number = "+6287846421796";
+        let name = document.getElementById('nama').value;
+        let email = document.getElementById('email').value;
+        let message = document.getElementById('pesan').value;
+
+        var url = "https://wa.me/" + number + "?text="
+        + "Salam%20kak%20saya%20ingin%20mengajukan%20pertanyaan%20mengenai%20Bintaro%20Learning%20Center%0A"
+        + "Nama : " + name + "%0a" 
+        + "Email : " + email  + "%0a"
+        + "Pertanyaan : " + message;
+        window.open(url, '_blank').focus();
+    }
+</script>
+<script src="./script.js"></script>
+
+</html>
+
+<!-- Swiper === -->
+    <!-- <div id="Home" class="swiper">
+        <div class="swiper-wrapper h-fit">
+            <div class="swiper-slide">
+                <img class="w-full object-cover object-center" src="https://testasn.com/assets-compro/img/banner/banner-3.png" alt="">
+            </div>
+            <div class="swiper-slide">
+                <img class="w-full object-cover object-center" src="https://testasn.com/assets-compro/img/banner/banner-9.png" alt="">
+            </div>
+            <div class="swiper-slide">
+                <img class="w-full object-cover object-center" src="https://testasn.com/assets-compro/img/banner/banner-7.png" alt="">
+            </div>
+        </div>
+        <div class="swiper-button-prev text-white ml-3 lg:inline hidden"></div>
+        <div class="swiper-button-next text-white mr-3 lg:inline hidden"></div>
+    </div> -->

@@ -1,4 +1,3 @@
-
 document.addEventListener('DOMContentLoaded', function() {
     const questions = document.querySelectorAll('.ask');
     questions.forEach(question => {
@@ -102,12 +101,11 @@ const buttonsPaket = document.querySelectorAll('.btn-paket');
 buttonsPaket.forEach((button, index) => {
     button.addEventListener("click", function() {
         const pakets = document.querySelectorAll('.pakets');
-        // adding background to packet
+        
         if (button.classList.contains('btn-bg-click')) {
-            return; // Exit the function if it does
+            return;
         }
 
-        // adding background to button when clicked
         buttonsPaket.forEach(btn => {
             btn.classList.remove('btn-bg-click');
         });
