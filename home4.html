@@ -178,12 +178,25 @@
 
             box-shadow: 0px 6px 0px #004382;
         }
+
+        .detak-animation {
+            animation: detak 2s infinite none;
+        }
+
+        @keyframes detak {
+            0% {
+                scale: 1;
+            }
+            50% {
+                scale: 1.1;
+            }
+        }
     </style>
 </head>
 
 <body class="bg-[#EEEEEE]">
 
-    <div class="bg-[#419e9e]  h-fit items-center justify-center flex">
+    <div class="bg-[#419e9e]  h-fit items-center justify-center flex p-12">
         <div class="flex flex-col items-center text-center max-w-[1200px] mx-auto">
             <h1 class="lg:text-3xl text-xl text-white font-bold">Mau Bisa Umroh & Haji Berkali-kali?<br>Jadi Agen Umroh Aja</h1>
             <div class="lg:mt-14 mt-10">
@@ -191,7 +204,7 @@
                 <h1 class="text-[#f7ff00] font-bold mt-5 lg:text-4xl text-2xl">UMROH MUDAH BONUS GAJIAN TIAP BULAN</h1>
             </div>
             <h1 class="lg:mt-14 mt-10 text-white font-bold lg:text-2xl max-w-[80%]">Cocok untuk Anda yang ingin mendapatkan income tambahan sebagai Agent Umroh dan Ingin memiliki BISNIS Umroh sendiri</h1>
-            <img class="mx-auto lg:mt-10 mt-6" width="250px" src="./assets/images/registernow.png" alt="">
+            <a href="https://wa.link/mbrub4"><img class="mx-auto lg:mt-10 mt-6 detak-animation" width="250px" src="./assets/images/registernow.png" alt=""></a>
         </div>
     </div>
 
@@ -277,7 +290,7 @@
 
     <div class="lg:h-32 h-96"></div>
 
-    <div class="h-[100vh] w-full bg-[#E2E2E2] flex flex-col items-center justify-between">
+    <div class="w-full bg-[#E2E2E2] flex flex-col items-center justify-between p-6">
         <div class="max-w-[600px] text-center items-center flex flex-col gap-3 mt-16">
             <h1 class="font-bold text-3xl">Yaa.. Saya Mau Daftar WEBINAR ini.. Berapa Biayanya?</h1>
             <h1 class="lg:text-3xl text-2xl font-semibold text-red-600"><s>Rp 99.000</s></h1>
